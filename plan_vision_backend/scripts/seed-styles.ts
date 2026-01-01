@@ -1,0 +1,1143 @@
+// import 'dotenv/config';
+// import { PrismaClient } from '@prisma/client';
+// import { Storage } from '@google-cloud/storage';
+// import * as fs from 'fs';
+// import * as path from 'path';
+//
+// const prisma = new PrismaClient();
+//
+// // Storage Service Logic (Simplified for script)
+// class ScriptStorageService {
+//   private bucketName: string;
+//   private storage: Storage;
+//
+//   constructor() {
+//     this.bucketName = process.env.GCS_BUCKET ?? '';
+//     if (!this.bucketName) {
+//       throw new Error('GCS_BUCKET environment variable is required');
+//     }
+//
+//     const storageOptions: any = {};
+//     const keyBase64 = process.env.GCS_SERVICE_ACCOUNT_KEY;
+//     if (keyBase64) {
+//       const credentials = JSON.parse(
+//         Buffer.from(keyBase64, 'base64').toString('utf-8'),
+//       );
+//       storageOptions.credentials = {
+//         client_email: credentials.client_email,
+//         private_key: credentials.private_key,
+//       };
+//       storageOptions.projectId = credentials.project_id;
+//     } else if (process.env.GCP_PROJECT_ID) {
+//       storageOptions.projectId = process.env.GCP_PROJECT_ID;
+//     }
+//
+//     this.storage = new Storage(storageOptions);
+//   }
+//
+//   async uploadFile(filePath: string, destination: string) {
+//     const bucket = this.storage.bucket(this.bucketName);
+//     const file = bucket.file(destination);
+//     const fileContent = fs.readFileSync(filePath);
+//
+//     await file.save(fileContent, {
+//       resumable: false,
+//     });
+//
+//     return { objectName: destination };
+//   }
+//
+//   getPublicUrl(objectName: string) {
+//     return `https://storage.googleapis.com/${this.bucketName}/${objectName}`;
+//   }
+// }
+//
+// const stylesData = [
+//   {
+//     name: 'Realistic 3D (Orthographic)',
+//     supportedImageTypes: ['floor_plan_2d', 'floor_plan_3d'],
+//     promptFragment:
+//       'Transform this into a high-quality photorealistic 3D floor plan rendering. Use an orthographic top-down view. Apply realistic textures (wood flooring, tiled bathrooms), soft global illumination shadows, and ambient occlusion to show depth. Furnish the space with modern furniture proportional to the rooms.',
+//   },
+//   {
+//     name: 'Classic Blueprint',
+//     supportedImageTypes: ['floor_plan_2d', 'floor_plan_3d', 'sketch_drawing'],
+//     promptFragment:
+//       'Convert this image into a classic architectural blueprint style. Use a deep rich blue background with crisp, clean white lines for all walls, doors, and furniture. Maintain a strict technical drawing aesthetic with high contrast and schematic precision.',
+//   },
+//   {
+//     name: 'Watercolor Illustration',
+//     supportedImageTypes: ['floor_plan_2d', 'sketch_drawing', 'exterior_garden'],
+//     promptFragment:
+//       'Apply an artistic watercolor architectural illustration style. Use a white paper texture background. Render the layout with soft edges, pastel color washes, and a hand-painted aesthetic. Highlight landscape/plants with soft greens and living areas with warm tones.',
+//   },
+//   {
+//     name: 'B&W Pencil Sketch',
+//     supportedImageTypes: [
+//       'floor_plan_2d',
+//       'sketch_drawing',
+//       'exterior_facade',
+//       'floor_plan_3d',
+//     ],
+//     promptFragment:
+//       'Render this as a hand-drawn black and white graphite pencil sketch. Use a white paper background. Employ rough artistic lines, shading, and hatching to define walls and depth. Create the look of a preliminary architectural concept sketch.',
+//   },
+//   {
+//     name: 'Modern Marketing Plan (2D)',
+//     supportedImageTypes: ['floor_plan_2d'],
+//     promptFragment:
+//       'Create a clean, modern 2D marketing floor plan. Use flat colors and vector-like lines. Render walls in solid grey or black. Color code the flooring (e.g., light wood for living areas, tiles for wet areas) but keep it flat without 3D shadows. Focus on clarity and readability for real estate listings.',
+//   },
+//   {
+//     name: 'High-End Photorealism',
+//     supportedImageTypes: ['floor_plan_3d', 'interior_empty'],
+//     promptFragment:
+//       'Enhance this rendering into a high-end photorealistic 3D image. Apply physically based rendering (PBR) materials to all surfaces. Use warm, natural sunlight entering from windows, creating realistic shadows. Ensure furniture looks plush and high-quality.',
+//   },
+//   {
+//     name: 'Clay Model (Monochrome)',
+//     supportedImageTypes: ['floor_plan_3d', 'exterior_facade', 'sketch_drawing'],
+//     promptFragment:
+//       "Render this as a clean, white 'clay model' architectural visualization. Use a monochromatic white palette with soft ambient occlusion shadows to highlight form and geometry. Remove all material textures and colors; focus purely on light and massing.",
+//   },
+//   {
+//     name: 'Wireframe Tech (Holographic)',
+//     supportedImageTypes: ['floor_plan_3d', 'floor_plan_2d'],
+//     promptFragment:
+//       'Transform this image into a technical wireframe rendering. Use a dark background. Outline all edges and furniture in glowing blue or white lines, simulating a CAD software view or a holographic projection. Emphasize structure over texture.',
+//   },
+//   {
+//     name: 'Ink & Marker Sketch',
+//     supportedImageTypes: ['floor_plan_3d', 'sketch_drawing'],
+//     promptFragment:
+//       "Render this as a hand-drawn architectural concept sketch. Use strong black ink outlines for geometry and 'alcohol marker' style coloring for floors and furniture. Keep the lines loose and expressive to suggest a creative design phase.",
+//   },
+//   {
+//     name: 'Photorealistic Rendering (Sketch-to-Reality)',
+//     supportedImageTypes: [
+//       'sketch_drawing',
+//       'floor_plan_2d',
+//       'floor_plan_3d',
+//       'interior_empty',
+//     ],
+//     promptFragment:
+//       'Interpret this rough sketch and generate a high-quality, photorealistic image based on the lines provided. Hallucinate realistic details, textures, and lighting to fill in the gaps. Turn the sketched outlines into real objects (e.g., turn a square outline into a realistic wooden table, squiggles into lush plants).',
+//   },
+//   {
+//     name: 'Digital Concept Art',
+//     supportedImageTypes: [
+//       'sketch_drawing',
+//       'interior_living_room',
+//       'exterior_facade',
+//     ],
+//     promptFragment:
+//       'Transform this sketch into a polished digital concept art painting. Use a painterly style with soft edges and dramatic lighting. Focus on atmosphere, mood, and color harmony rather than strict photorealism. Make it look like production art for a film or game.',
+//   },
+//   {
+//     name: 'Clean Vector Line Art',
+//     supportedImageTypes: ['sketch_drawing', 'floor_plan_2d'],
+//     promptFragment:
+//       'Clean up this sketch into a professional vector-style line drawing. Straighten messy lines, correct perspective errors, and remove eraser marks or noise. Use uniform black line weights on a pure white background. Focus on clarity and geometric precision.',
+//   },
+//   {
+//     name: 'Ink & Watercolor',
+//     supportedImageTypes: [
+//       'sketch_drawing',
+//       'exterior_garden',
+//       'exterior_facade',
+//     ],
+//     promptFragment:
+//       'Refine this sketch into a professional ink and watercolor illustration. distinct black ink outlines to define the structure, filled with soft, translucent watercolor washes. Use vibrant but natural colors. Keep the artistic, hand-crafted character of the original sketch.',
+//   },
+//   {
+//     name: 'Modern Minimalist',
+//     supportedImageTypes: [
+//       'interior_living_room',
+//       'interior_bedroom',
+//       'interior_kitchen',
+//       'interior_dining_room',
+//       'interior_office',
+//       'interior_empty',
+//     ],
+//     promptFragment:
+//       'Redesign this room in a Modern Minimalist style. Focus on clean lines, open space, and a monochromatic color palette (whites, greys, and blacks). Use functional furniture with simple geometric shapes. Remove all clutter and ornamentation. Maximize natural light.',
+//   },
+//   {
+//     name: 'Scandi (Scandinavian)',
+//     supportedImageTypes: [
+//       'interior_living_room',
+//       'interior_bedroom',
+//       'interior_dining_room',
+//       'interior_kids_room',
+//       'interior_sunroom',
+//     ],
+//     promptFragment:
+//       "Apply a Scandinavian (Scandi) design aesthetic. Use light-colored woods (like ash or pine), soft neutral colors, and cozy textures (wool, linen). Prioritize functionality and a 'hygge' atmosphere. Include botanical accents and simple, elegant furniture.",
+//   },
+//   {
+//     name: 'Industrial Loft',
+//     supportedImageTypes: [
+//       'interior_living_room',
+//       'interior_kitchen',
+//       'interior_dining_room',
+//       'interior_office',
+//       'interior_game_room',
+//     ],
+//     promptFragment:
+//       'Transform this space into an Industrial Loft style. Incorporate raw materials like exposed brick walls, concrete floors, and visible ductwork. Use black metal finishes and distressed leather furniture. Aim for a masculine, edgy, and spacious warehouse look.',
+//   },
+//   {
+//     name: 'Bohemian (Boho)',
+//     supportedImageTypes: [
+//       'interior_living_room',
+//       'interior_bedroom',
+//       'interior_sunroom',
+//       'exterior_balcony',
+//       'exterior_rooftop',
+//     ],
+//     promptFragment:
+//       'Redesign this room in a Bohemian (Boho) style. Use an eclectic mix of patterns, textures, and warm earth tones (terracotta, rust, sage green). Include natural materials like rattan, wicker, and bamboo. Add an abundance of indoor plants and layered textiles.',
+//   },
+//   {
+//     name: 'Mid-Century Modern',
+//     supportedImageTypes: [
+//       'interior_living_room',
+//       'interior_dining_room',
+//       'interior_office',
+//       'interior_bedroom',
+//     ],
+//     promptFragment:
+//       'Apply a Mid-Century Modern aesthetic (1950s-1960s style). Use furniture with clean lines, organic curves, and tapered legs. Focus on wood finishes like teak and walnut. Incorporate bold accent colors like mustard yellow, olive green, or teal alongside geometric patterns.',
+//   },
+//   {
+//     name: 'Modern Farmhouse',
+//     supportedImageTypes: [
+//       'interior_kitchen',
+//       'interior_dining_room',
+//       'interior_laundry_room',
+//       'exterior_facade',
+//     ],
+//     promptFragment:
+//       'Redesign this kitchen in a Modern Farmhouse style. Use white shaker-style cabinetry with high-contrast black metal hardware. Include a classic apron-front farmhouse sink. Incorporate rustic elements like reclaimed wood beams or open shelving alongside clean, modern quartz countertops.',
+//   },
+//   {
+//     name: 'Sleek Modern (Minimalist)',
+//     supportedImageTypes: [
+//       'interior_kitchen',
+//       'interior_bathroom',
+//       'interior_living_room',
+//       'commercial_office',
+//     ],
+//     promptFragment:
+//       'Apply a Sleek Modern Minimalist design. Use flat-panel, handleless cabinetry for a seamless look. Incorporate high-end materials like a waterfall marble or quartz island. Ensure appliances are integrated or stainless steel. Keep surfaces completely clutter-free and lighting cool and architectural.',
+//   },
+//   {
+//     name: 'Classic Traditional',
+//     supportedImageTypes: [
+//       'interior_kitchen',
+//       'interior_dining_room',
+//       'interior_bathroom',
+//       'interior_entryway',
+//     ],
+//     promptFragment:
+//       'Design this kitchen in a Classic Traditional style. Focus on elegance and symmetry. Use raised-panel cabinetry with ornate detailing and crown molding. Include a substantial island with decorative legs or corbels. Select warm stone countertops and classic lighting fixtures like lanterns or chandeliers.',
+//   },
+//   {
+//     name: "Industrial Chef's Kitchen",
+//     supportedImageTypes: [
+//       'interior_kitchen',
+//       'commercial_restaurant',
+//       'interior_game_room',
+//     ],
+//     promptFragment:
+//       "Transform this space into an Industrial Chef's kitchen. Prioritize functionality with commercial-grade stainless steel appliances and countertops. Use open metal shelving instead of upper cabinets. Expose architectural details like brick or ductwork. Use subway tile and concrete finishes.",
+//   },
+//   {
+//     name: 'Coastal / Hamptons',
+//     supportedImageTypes: [
+//       'interior_kitchen',
+//       'interior_dining_room',
+//       'interior_living_room',
+//       'interior_sunroom',
+//       'interior_bedroom',
+//     ],
+//     promptFragment:
+//       'Redesign this kitchen with a Coastal / Hamptons aesthetic. Use a palette of crisp whites and soft ocean blues. Install shaker cabinets and perhaps a beadboard ceiling. Use natural materials like light oak flooring and rattan or woven pendant lights to create a breezy, beach-house atmosphere.',
+//   },
+//   {
+//     name: 'Japandi (Zen Sanctuary)',
+//     supportedImageTypes: [
+//       'interior_bedroom',
+//       'interior_bathroom',
+//       'interior_living_room',
+//       'interior_sunroom',
+//     ],
+//     promptFragment:
+//       'Redesign this bedroom in a Japandi style. Blend Scandinavian functionality with Japanese rustic minimalism. Use a low-profile platform bed and natural materials like bamboo, light wood, and linen. Keep colors warm and neutral (cream, beige, stone). Focus on creating a Zen, uncluttered sanctuary.',
+//   },
+//   {
+//     name: 'Boutique Hotel Luxury',
+//     supportedImageTypes: [
+//       'interior_bedroom',
+//       'interior_bathroom',
+//       'commercial_lobby',
+//     ],
+//     promptFragment:
+//       'Transform this room into a high-end Boutique Hotel suite. Focus on symmetry and opulence. Use a large, upholstered headboard as the focal point. Incorporate rich textures like velvet and silk. Add wall sconces for ambient lighting and ensure the bedding looks crisp, layered, and expensive.',
+//   },
+//   {
+//     name: 'Boho Chic',
+//     supportedImageTypes: [
+//       'interior_bedroom',
+//       'interior_living_room',
+//       'interior_kids_room',
+//       'interior_attic',
+//     ],
+//     promptFragment:
+//       'Design this bedroom in a Boho Chic style. Use natural materials like rattan, wicker, and light wood. Layer different patterns in the rug and pillows. Add an abundance of plants and perhaps a macramé wall hanging. Keep the vibe relaxed, earthy, and free-spirited.',
+//   },
+//   {
+//     name: 'Modern Spa (Zen/Japandi)',
+//     supportedImageTypes: [
+//       'interior_bathroom',
+//       'interior_sauna',
+//       'interior_pool',
+//     ],
+//     promptFragment:
+//       'Transform this bathroom into a Modern Spa sanctuary. Use natural materials like teak wood, slate, or river stone. Center the design around a freestanding soaking tub if space permits. Use soft, warm ambient lighting and include greenery to create a calming, Zen-like atmosphere.',
+//   },
+//   {
+//     name: 'Sleek Minimalist',
+//     supportedImageTypes: [
+//       'interior_bathroom',
+//       'interior_laundry_room',
+//       'interior_kitchen',
+//     ],
+//     promptFragment:
+//       'Apply a Sleek Minimalist design. Focus on clean lines and hygienic surfaces. Use large-format tiles in neutral tones (white or light grey). Install a floating vanity and a frameless glass walk-in shower to maximize the sense of space. Bright, cool-toned lighting.',
+//   },
+//   {
+//     name: 'Luxury Glamour (Marble)',
+//     supportedImageTypes: [
+//       'interior_bathroom',
+//       'interior_walkin_closet',
+//       'interior_entryway',
+//     ],
+//     promptFragment:
+//       'Design a Luxury Glamour bathroom. Use floor-to-ceiling marble or porcelain tile (Calacatta or Carrara style). Accessorize with brushed gold or brass fixtures (faucets, showerheads). Include elegant lighting features. The goal is a high-end, 5-star hotel suite aesthetic.',
+//   },
+//   {
+//     name: 'Industrial Chic',
+//     supportedImageTypes: [
+//       'interior_bathroom',
+//       'interior_kitchen',
+//       'interior_laundry_room',
+//     ],
+//     promptFragment:
+//       'Create an Industrial Chic bathroom. Use white subway tiles with dark grout. distinct black metal accents, particularly for the shower enclosure (Crittall style grid) and faucets. Incorporate raw textures like concrete for the floor or sink area.',
+//   },
+//   {
+//     name: 'Vintage Traditional',
+//     supportedImageTypes: ['interior_bathroom', 'interior_entryway'],
+//     promptFragment:
+//       'Redesign this space in a Vintage Traditional style. Incorporate classic elements like a clawfoot bathtub, a pedestal sink, and wainscoting on the lower walls. Use black and white patterned floor tiles and chrome cross-handle faucets to complete the timeless look.',
+//   },
+//   {
+//     name: 'Modern Farmhouse',
+//     supportedImageTypes: [
+//       'interior_dining_room',
+//       'interior_kitchen',
+//       'interior_living_room',
+//       'exterior_porch',
+//     ],
+//     promptFragment:
+//       'Redesign this dining room in a Modern Farmhouse style. Center the room around a substantial, rustic wooden dining table. Pair it with black timber chairs (e.g., Windsor style) or a bench. Use an iron linear chandelier or lantern lighting. Keep walls bright (white or cream) with optional shiplap texture.',
+//   },
+//   {
+//     name: 'Mid-Century Style Dining',
+//     supportedImageTypes: [
+//       'interior_dining_room',
+//       'interior_living_room',
+//       'interior_office',
+//     ],
+//     promptFragment:
+//       'Apply a Mid-Century Modern aesthetic. Use a walnut or teak dining table with tapered legs. Surround it with iconic chair designs (like Wishbone or molded plastic shell chairs). Install a statement light fixture (sputnik or globe style). Keep the vibe retro-chic and sophisticated.',
+//   },
+//   {
+//     name: 'Formal Traditional',
+//     supportedImageTypes: [
+//       'interior_dining_room',
+//       'interior_entryway',
+//       'commercial_restaurant',
+//     ],
+//     promptFragment:
+//       'Create a Formal Traditional dining room. Use a polished dark wood table (mahogany or cherry). Select high-back upholstered chairs for comfort and elegance. Incorporate classic architectural details like wainscoting and crown molding. Use a crystal chandelier as the centerpiece.',
+//   },
+//   {
+//     name: 'Scandi Minimalist',
+//     supportedImageTypes: [
+//       'interior_dining_room',
+//       'interior_kitchen',
+//       'interior_kids_room',
+//     ],
+//     promptFragment:
+//       'Design a Scandinavian Minimalist dining area. Focus on light woods (ash or white oak) and simple forms. Use a round or oval table to soften the space. Keep decor minimal—perhaps a single vase with branches. Ensure the lighting is soft and diffused (paper or matte metal pendants).',
+//   },
+//   {
+//     name: 'Industrial Loft Dining',
+//     supportedImageTypes: [
+//       'interior_dining_room',
+//       'interior_kitchen',
+//       'commercial_restaurant',
+//       'interior_game_room',
+//     ],
+//     promptFragment:
+//       'Transform this into an Industrial dining space. Use a table that combines raw wood (live edge) with heavy metal legs. Pair with metal chairs (like Tolix style) or leather bench seating. Feature exposed elements like brick walls or filament bulb lighting.',
+//   },
+//   {
+//     name: 'Modern Productivity Office (Minimalist)',
+//     supportedImageTypes: [
+//       'interior_office',
+//       'interior_bedroom',
+//       'commercial_office',
+//     ],
+//     promptFragment:
+//       'Design a Modern Minimalist home office. Focus on a distraction-free environment with clean lines and a white or neutral color palette. Include a sleek desk and a high-quality ergonomic office chair. Keep clutter to a minimum, utilizing hidden storage or simple floating shelves.',
+//   },
+//   {
+//     name: 'Executive Library (Traditional)',
+//     supportedImageTypes: [
+//       'interior_office',
+//       'interior_media_room',
+//       'interior_living_room',
+//     ],
+//     promptFragment:
+//       'Transform this space into an Executive Library style office. Use rich, dark wood tones (walnut or mahogany) for the desk and shelving. Incorporate built-in bookshelves. Select a substantial leather chair (tufted or high-back). Aim for a scholarly, authoritative, and timeless atmosphere.',
+//   },
+//   {
+//     name: 'Industrial Creative Studio',
+//     supportedImageTypes: [
+//       'interior_office',
+//       'interior_game_room',
+//       'commercial_office',
+//       'interior_attic',
+//     ],
+//     promptFragment:
+//       'Create an Industrial Creative Studio. Use raw materials like a reclaimed wood desk on metal trestle legs. Feature exposed brick or concrete elements. Include vintage industrial lighting (architect lamps). The vibe should be energetic, raw, and functional.',
+//   },
+//   {
+//     name: 'Scandi / Japandi Focus',
+//     supportedImageTypes: [
+//       'interior_office',
+//       'interior_bedroom',
+//       'interior_sunroom',
+//     ],
+//     promptFragment:
+//       'Apply a Scandi / Japandi aesthetic to this workspace. Use light-colored woods (ash/oak) and soft textiles (linen curtains or rugs). distinct natural light and add indoor plants to reduce stress. Keep the color palette soft, warm, and neutral.',
+//   },
+//   {
+//     name: 'Boho Creative',
+//     supportedImageTypes: [
+//       'interior_office',
+//       'interior_bedroom',
+//       'interior_kids_room',
+//     ],
+//     promptFragment:
+//       'Design a Bohemian Creative workspace. Use a vintage or mid-century wooden desk. Layer the room with texture: a patterned rug, a gallery wall of art prints, and hanging plants. The atmosphere should be personal, eclectic, and inspiring.',
+//   },
+//   {
+//     name: 'Scandi Neutral (Nursery)',
+//     supportedImageTypes: [
+//       'interior_kids_room',
+//       'interior_bedroom',
+//       'interior_empty',
+//     ],
+//     promptFragment:
+//       'Design a Scandi Neutral nursery. Use a soothing palette of creams, warm greys, and soft sage greens. Incorporate light wood furniture (crib, changing table) and natural textures like wool and sheepskin. Keep the atmosphere calm, bright, and uncluttered.',
+//   },
+//   {
+//     name: 'Whimsical Fairytale',
+//     supportedImageTypes: ['interior_kids_room', 'interior_bedroom'],
+//     promptFragment:
+//       'Create a Whimsical Fairytale room. Use a soft pastel color palette (blush pinks, powder blues, lavenders). Incorporate magical elements like wall murals (clouds, forests), canopy beds, or house-frame beds. Add soft accent lighting like fairy lights to create a dreamy vibe.',
+//   },
+//   {
+//     name: 'Modern Playful (Primary Colors)',
+//     supportedImageTypes: [
+//       'interior_kids_room',
+//       'interior_game_room',
+//       'interior_bedroom',
+//     ],
+//     promptFragment:
+//       'Design a Modern Playful room. Use a clean white backdrop popped with bold primary colors (red, blue, yellow) or geometric shapes. Select modern, functional furniture like bunk beds or modular storage. The vibe should be energetic, fun, and stimulating.',
+//   },
+//   {
+//     name: 'Jungle Adventure',
+//     supportedImageTypes: [
+//       'interior_kids_room',
+//       'interior_bedroom',
+//       'interior_game_room',
+//     ],
+//     promptFragment:
+//       'Transform this room into a Jungle Adventure theme. Use deep greens and earthy browns. Incorporate botanical or animal-themed wallpaper. Add adventurous elements like a canvas teepee, wooden accents, and animal-themed decor. Create a wild but cozy hideout.',
+//   },
+//   {
+//     name: 'Montessori Minimalist',
+//     supportedImageTypes: ['interior_kids_room', 'interior_bedroom'],
+//     promptFragment:
+//       'Apply a Montessori Minimalist design philosophy. Everything should be accessible to the child. Use a low floor bed and low, open shelving for toys and books. Keep the room spacious and uncluttered to foster independence and focus. Use neutral, calming colors.',
+//   },
+//   {
+//     name: 'Boutique Luxury (The "Dream Closet")',
+//     supportedImageTypes: [
+//       'interior_walkin_closet',
+//       'commercial_retail',
+//       'interior_bedroom',
+//     ],
+//     promptFragment:
+//       'Transform this space into a Boutique Luxury closet. Design it to feel like a high-end fashion retail store. Include a central island with storage. Use glass-fronted cabinets to display clothing. incorporate integrated LED lighting for shelves and a statement chandelier. Use premium finishes like marble and white lacquer.',
+//   },
+//   {
+//     name: 'Modern Minimalist Closet',
+//     supportedImageTypes: ['interior_walkin_closet', 'interior_bedroom'],
+//     promptFragment:
+//       'Apply a Modern Minimalist design. Focus on clean lines and concealed storage. Use flat-panel cabinetry in white or light grey. Ensure the layout is highly organized with a place for everything. Keep the aesthetic airy and clutter-free.',
+//   },
+//   {
+//     name: "Dark & Moody (Gentleman's Wardrobe)",
+//     supportedImageTypes: [
+//       'interior_walkin_closet',
+//       'interior_bedroom',
+//       'commercial_retail',
+//     ],
+//     promptFragment:
+//       "Design a 'Gentleman's Wardrobe' style closet. Use dark, rich materials like walnut or espresso-stained wood. Paint walls in charcoal or navy. Include masculine accents like leather seating and focused track lighting to highlight clothing textures.",
+//   },
+//   {
+//     name: 'Industrial Open System',
+//     supportedImageTypes: [
+//       'interior_walkin_closet',
+//       'interior_bedroom',
+//       'commercial_retail',
+//     ],
+//     promptFragment:
+//       'Create an Industrial Open closet system. Use black metal piping for hanging rods and reclaimed wood for open shelving. Expose the walls behind (brick or concrete if possible). Avoid heavy cabinetry in favor of an open, airy, retail-display look.',
+//   },
+//   {
+//     name: 'Modern Farmhouse Laundry Room',
+//     supportedImageTypes: [
+//       'interior_laundry_room',
+//       'interior_entryway',
+//       'interior_kitchen',
+//     ],
+//     promptFragment:
+//       'Design a Modern Farmhouse utility space. Use white shiplap walls and shaker-style cabinetry (white, sage green, or navy). Include rustic accents like a wooden bench, woven storage baskets, and a ceramic farmhouse sink. Keep it cozy but highly functional.',
+//   },
+//   {
+//     name: 'Clean & Bright (Minimalist Utility)',
+//     supportedImageTypes: ['interior_laundry_room', 'interior_bathroom'],
+//     promptFragment:
+//       'Apply a Clean & Bright Minimalist aesthetic. Use an all-white or very light palette to emphasize hygiene and cleanliness. Install flat-panel cabinetry and white stone countertops. Ensure appliances are stacked or integrated seamlessly. Maximize bright, cool lighting.',
+//   },
+//   {
+//     name: 'Moody & Bold (Patterned)',
+//     supportedImageTypes: [
+//       'interior_laundry_room',
+//       'interior_bathroom',
+//       'interior_entryway',
+//     ],
+//     promptFragment:
+//       'Create a Moody & Bold utility room. Use deep, rich cabinet colors like navy blue, forest green, or charcoal. Pair this with statement flooring—specifically bold, patterned encaustic or geometric tiles. Add metallic accents (brass or gold) for a touch of luxury in a small space.',
+//   },
+//   {
+//     name: 'Coastal Fresh',
+//     supportedImageTypes: [
+//       'interior_laundry_room',
+//       'interior_bathroom',
+//       'interior_sunroom',
+//     ],
+//     promptFragment:
+//       'Redesign this space with a Coastal Fresh vibe. Use a palette of crisp whites and soft sky blues. Incorporate beadboard textures on walls or cabinets. Use light wood flooring to keep the room feeling airy and breezy, evoking a sense of freshness.',
+//   },
+//   {
+//     name: 'Luxury Fitness Club (Equinox Style)',
+//     supportedImageTypes: [
+//       'interior_home_gym',
+//       'commercial_lobby',
+//       'interior_bathroom',
+//     ],
+//     promptFragment:
+//       'Design a Luxury Fitness Club aesthetic. Use a dark, moody color palette (charcoal, black, dark wood). Install full-wall mirrors to expand the space. Incorporate architectural lighting (LED strips, recessed lighting). Use sleek, high-end black equipment to mimic an exclusive gym atmosphere.',
+//   },
+//   {
+//     name: 'Industrial CrossFit / Garage Gym',
+//     supportedImageTypes: [
+//       'interior_home_gym',
+//       'interior_game_room',
+//       'exterior_backyard',
+//     ],
+//     promptFragment:
+//       'Create an Industrial CrossFit style gym. Embrace the raw structure—exposed brick, concrete floors, and open ceilings. Use heavy-duty functional equipment like squat racks and kettlebells. Install rubber flooring mats. The vibe should be gritty, energetic, and utilitarian.',
+//   },
+//   {
+//     name: 'Zen Yoga Studio',
+//     supportedImageTypes: [
+//       'interior_home_gym',
+//       'interior_sunroom',
+//       'interior_bedroom',
+//       'interior_empty',
+//     ],
+//     promptFragment:
+//       'Transform this space into a Zen Yoga Studio. Focus on serenity and mindfulness. Use warm, light wood flooring and soft white walls. Incorporate natural elements like indoor plants and natural light. Keep the space open and uncluttered, dedicated to movement and meditation.',
+//   },
+//   {
+//     name: 'High-Tech Minimalist (Peloton Style)',
+//     supportedImageTypes: [
+//       'interior_home_gym',
+//       'interior_office',
+//       'interior_living_room',
+//     ],
+//     promptFragment:
+//       'Apply a High-Tech Minimalist design. Keep the room ultra-clean with white walls and crisp lighting. Focus on smart technology—large screens, smart bikes, or treadmills. Remove visual clutter. The aesthetic should feel futuristic, sharp, and motivated.',
+//   },
+//   {
+//     name: 'Classic Pub | Billiard Room',
+//     supportedImageTypes: [
+//       'interior_game_room',
+//       'interior_dining_room',
+//       'commercial_restaurant',
+//     ],
+//     promptFragment:
+//       'Transform this space into a Classic Pub & Billiard Room. Use rich, dark woods for wainscoting and bar areas. Center the room around a pool table or poker table. Incorporate leather seating and vintage-style lighting. The atmosphere should be warm, masculine, and club-like.',
+//   },
+//   {
+//     name: 'Industrial Man Cave',
+//     supportedImageTypes: [
+//       'interior_game_room',
+//       'interior_home_gym',
+//       'commercial_restaurant',
+//     ],
+//     promptFragment:
+//       'Design an Industrial Man Cave. Embrace raw construction elements like concrete floors and exposed ceiling beams. Add fun elements like neon signage and game tables (foosball, air hockey). Use sturdy metal and wood furniture. Perfect for watching sports and entertaining.',
+//   },
+//   {
+//     name: 'Retro Arcade (80s)',
+//     supportedImageTypes: [
+//       'interior_game_room',
+//       'interior_media_room',
+//       'commercial_retail',
+//     ],
+//     promptFragment:
+//       'Create a Retro Arcade theme. Draw inspiration from 1980s arcades. Use bold patterns like checkered flooring or neon-printed carpets. Line the walls with vintage arcade cabinets or pinball machines. Use vibrant, colorful lighting to create a nostalgic, energetic mood.',
+//   },
+//   {
+//     name: 'Modern Family Rec Room',
+//     supportedImageTypes: [
+//       'interior_game_room',
+//       'interior_living_room',
+//       'interior_kids_room',
+//     ],
+//     promptFragment:
+//       'Design a Modern Family Rec Room. Prioritize versatility for both adults and kids. Use durable, comfortable furniture like a large sectional. Include plenty of built-in storage for toys and games. Keep the color palette bright, neutral, and inviting',
+//   },
+//   {
+//     name: 'Botanical Conservatory',
+//     supportedImageTypes: [
+//       'interior_sunroom',
+//       'exterior_garden',
+//       'exterior_patio',
+//     ],
+//     promptFragment:
+//       'Design a Botanical Conservatory. Fill the space with lush greenery—large potted plants, hanging ferns, and trailing vines. Use natural flooring materials like terracotta or slate. Furnish with vintage metal or weathered wood pieces to create an established, greenhouse atmosphere.',
+//   },
+//   {
+//     name: 'Coastal | Hamptons',
+//     supportedImageTypes: [
+//       'interior_sunroom',
+//       'exterior_porch',
+//       'exterior_balcony',
+//     ],
+//     promptFragment:
+//       'Apply a Coastal Hamptons aesthetic. Use a palette of crisp whites and soft blues. Furnish with high-quality wicker or rattan furniture topped with comfortable cushions. Include beadboard details and natural fiber rugs (jute/sisal). Keep it airy and breezy.',
+//   },
+//   {
+//     name: 'Modern Lounge',
+//     supportedImageTypes: [
+//       'interior_sunroom',
+//       'interior_living_room',
+//       'exterior_rooftop',
+//     ],
+//     promptFragment:
+//       "Create a Modern Sunroom Lounge. Treat this space as a seamless extension of a modern home. Use sleek, low-profile furniture that doesn't obstruct the view. Incorporate black-framed windows and polished concrete or light wood flooring. Keep decor minimal to focus on the outdoors.",
+//   },
+//   {
+//     name: 'Rustic Beam Cabin',
+//     supportedImageTypes: [
+//       'interior_attic',
+//       'interior_bedroom',
+//       'interior_living_room',
+//     ],
+//     promptFragment:
+//       'Transform this attic into a Rustic Cabin retreat. Highlight the architectural structure by exposing heavy wooden beams. Use warm wood paneling on the ceiling or walls. Furnish with cozy, hearty textiles like wool and plaid. Create a warm, enclosed, and safe atmosphere.',
+//   },
+//   {
+//     name: 'Bright White Studio (Scandi)',
+//     supportedImageTypes: [
+//       'interior_attic',
+//       'interior_office',
+//       'interior_bedroom',
+//     ],
+//     promptFragment:
+//       'Design a Bright Scandi Studio. Paint all walls and sloped ceilings pure white to reflect light and open up the cramped space. Use light oak flooring. Install skylights if possible. Keep furniture minimal and functional to maximize the usable floor area.',
+//   },
+//   {
+//     name: 'Cozy Reading Nook',
+//     supportedImageTypes: [
+//       'interior_attic',
+//       'interior_bedroom',
+//       'interior_kids_room',
+//     ],
+//     promptFragment:
+//       'Create a Cozy Reading Nook. Utilize the low space under the sloped eaves for custom built-in shelving and a window seat or daybed. Layer with plenty of soft pillows and blankets. Focus on creating an intimate, quiet hideaway.',
+//   },
+//   {
+//     name: 'Modern Real Estate Staging (Neutral)',
+//     supportedImageTypes: [
+//       'interior_empty',
+//       'interior_living_room',
+//       'interior_bedroom',
+//       'floor_plan_3d',
+//     ],
+//     promptFragment:
+//       "Virtually stage this empty room for Real Estate marketing. Use a 'Modern Transitional' style with a neutral color palette (beiges, greys, whites) to appeal to the widest audience. select perfectly scaled furniture that shows off the room's potential without cluttering it. Ensure lighting is bright and inviting.",
+//   },
+//   {
+//     name: 'Luxury Renovation Visualization',
+//     supportedImageTypes: [
+//       'interior_empty',
+//       'interior_living_room',
+//       'interior_kitchen',
+//     ],
+//     promptFragment:
+//       'Transform this empty shell into a High-End Luxury space. Upgrade the finishes: visualize herringbone wood flooring and wall moldings/wainscoting. Furnish with sophisticated, expensive-looking pieces (velvet, brass, marble). The goal is to show the maximum value potential of the property.',
+//   },
+//   {
+//     name: 'Minimalist Potential (White Box)',
+//     supportedImageTypes: [
+//       'interior_empty',
+//       'commercial_office',
+//       'commercial_retail',
+//     ],
+//     promptFragment:
+//       'Stage this room with a strict Minimalist aesthetic. Use only a few key pieces of iconic furniture to establish scale. Keep the walls stark white and the floors bare or simple. The goal is to highlight the architectural volume and natural light of the space, rather than the furniture.',
+//   },
+//   {
+//     name: 'Grand Traditional (First Impression)',
+//     supportedImageTypes: [
+//       'interior_entryway',
+//       'interior_hallway',
+//       'commercial_lobby',
+//     ],
+//     promptFragment:
+//       'Design a Grand Traditional foyer. Focus on symmetry and elegance. Use premium flooring like marble (checkered or bordered). Place a central round table with floral arrangements if space permits, or a curated console table with a large mirror. Install a statement chandelier.',
+//   },
+//   {
+//     name: 'Modern Functional (Mudroom Hybrid)',
+//     supportedImageTypes: [
+//       'interior_entryway',
+//       'interior_laundry_room',
+//       'interior_hallway',
+//     ],
+//     promptFragment:
+//       'Apply a Modern Functional design. Prioritize organization. Include built-in seating (bench) with shoe storage. Use wall hooks or a sleek coat rack. Keep lines clean and simple with a large mirror to check appearance before leaving. Use durable flooring.',
+//   },
+//   {
+//     name: 'Boho Warmth',
+//     supportedImageTypes: [
+//       'interior_entryway',
+//       'interior_hallway',
+//       'interior_sunroom',
+//     ],
+//     promptFragment:
+//       'Create a Boho Warmth entryway. Use a vintage timber console table and a colorful, patterned runner rug (kilim or Persian). Add texture with wicker baskets for storage and hanging plants. The lighting should be warm and inviting.',
+//   },
+//   {
+//     name: 'Art Gallery Style',
+//     supportedImageTypes: [
+//       'interior_hallway',
+//       'interior_entryway',
+//       'commercial_office',
+//     ],
+//     promptFragment:
+//       'Transform this hallway into an Art Gallery. Keep walls crisp white. Install a series of uniform picture frames (gallery wall) or large statement art. crucial: Use directional track lighting or wall sconces to specifically highlight the artwork, creating drama and rhythm.',
+//   },
+//   {
+//     name: 'Bright Scandi (Widening)',
+//     supportedImageTypes: [
+//       'interior_hallway',
+//       'interior_entryway',
+//       'interior_bedroom',
+//     ],
+//     promptFragment:
+//       'Apply a Bright Scandi aesthetic. The goal is to make the hallway feel wider and lighter. Use pale wood flooring and off-white wall paint. Add a light-colored runner rug to guide the eye. Use mirrors strategically to reflect light and expand the perceived space.',
+//   },
+//   {
+//     name: 'Classic Wainscoting',
+//     supportedImageTypes: [
+//       'interior_hallway',
+//       'interior_entryway',
+//       'interior_dining_room',
+//     ],
+//     promptFragment:
+//       'Design a Classic hallway with wainscoting. Install architectural molding—either beadboard, board-and-batten, or chair rails—on the lower half of the walls (painted white). Use a contrasting soft color or wallpaper above. Add classic wall sconces.',
+//   },
+//   {
+//     name: 'Modern Floating Glass',
+//     supportedImageTypes: [
+//       'interior_staircase',
+//       'interior_entryway',
+//       'interior_living_room',
+//     ],
+//     promptFragment:
+//       "Redesign this staircase in a Modern Floating style. Use 'floating' treads (cantilevered or open riser) to maximize light flow. Install a frameless glass balustrade for a seamless look. Use high-contrast materials like oak treads against white walls.",
+//   },
+//   {
+//     name: 'Traditional Elegant (Runner)',
+//     supportedImageTypes: [
+//       'interior_staircase',
+//       'interior_entryway',
+//       'interior_hallway',
+//     ],
+//     promptFragment:
+//       'Apply a Traditional Elegant design. Contrast dark wood treads with crisp white painted risers. Install a patterned carpet runner down the center, secured with metallic stair rods (brass or nickel). Use classic turned spindles for the banister.',
+//   },
+//   {
+//     name: 'Industrial Steel',
+//     supportedImageTypes: [
+//       'interior_staircase',
+//       'interior_game_room',
+//       'interior_home_gym',
+//     ],
+//     promptFragment:
+//       'Create an Industrial staircase. Use a heavy steel structure (blackened metal stringers). Use reclaimed wood or metal grating for the treads. Install a cable railing system or horizontal metal bars. Expose adjacent brick or concrete walls.',
+//   },
+//   {
+//     name: 'Tech Startup (Open Plan)',
+//     supportedImageTypes: [
+//       'commercial_office',
+//       'commercial_conference',
+//       'interior_game_room',
+//     ],
+//     promptFragment:
+//       'Design a Modern Tech Startup office. Embrace an open-plan layout with rows of shared white bench desks. Use industrial elements like polished concrete floors and exposed ceilings. Add acoustic baffles or clouds overhead. Inject energy with pops of vibrant color and collaborative breakout zones.',
+//   },
+//   {
+//     name: 'Corporate Professional',
+//     supportedImageTypes: [
+//       'commercial_office',
+//       'commercial_conference',
+//       'commercial_lobby',
+//     ],
+//     promptFragment:
+//       'Apply a Corporate Professional aesthetic. Focus on privacy and acoustics. Use glass partitions to define offices while keeping light flow. Install high-quality commercial carpeting to dampen sound. Stick to a neutral, professional color palette (greys, blues, beiges) that conveys stability.',
+//   },
+//   {
+//     name: 'Biophilic Design (Green Office)',
+//     supportedImageTypes: [
+//       'commercial_office',
+//       'commercial_lobby',
+//       'interior_sunroom',
+//     ],
+//     promptFragment:
+//       'Create a Biophilic workspace. The priority is employee wellness and connection to nature. Install a living green wall or abundant potted plants. Use natural materials like wood, cork, and stone. Maximize natural light and use organic, curved shapes in the furniture.',
+//   },
+//   {
+//     name: 'The Glass Fishbowl (Modern)',
+//     supportedImageTypes: ['commercial_conference', 'commercial_office'],
+//     promptFragment:
+//       "Design a Modern 'Glass Fishbowl' meeting room. Use floor-to-ceiling glass walls to enclose the space. Center a sleek, white or glass boat-shaped table. Equip with high-end ergonomic leather chairs. Emphasize technology with a large, integrated video conferencing display.",
+//   },
+//   {
+//     name: 'Executive Boardroom (Traditional)',
+//     supportedImageTypes: ['commercial_conference', 'interior_dining_room'],
+//     promptFragment:
+//       'Create an Executive Boardroom. Use rich, dark wood paneling and a massive, solid wood conference table to convey authority. Select heavy, high-back upholstered chairs. The lighting should be focused on the table surface, creating a serious, high-stakes atmosphere.',
+//   },
+//   {
+//     name: 'Creative Huddle Space',
+//     supportedImageTypes: [
+//       'commercial_conference',
+//       'commercial_office',
+//       'interior_game_room',
+//     ],
+//     promptFragment:
+//       'Design a Creative Huddle Space. Abandon the formal table; use lounge seating, bean bags, or high-top stools. Make the walls functional (floor-to-ceiling whiteboards or glass writing surfaces). Use vibrant colors to stimulate energy and brainstorming.',
+//   },
+//   {
+//     name: 'Minimalist Boutique',
+//     supportedImageTypes: [
+//       'commercial_retail',
+//       'interior_walkin_closet',
+//       'commercial_lobby',
+//     ],
+//     promptFragment:
+//       'Apply a Minimalist Boutique aesthetic. Treat the product like art in a gallery. Use stark, clean backgrounds (white walls, concrete floors). Use minimal shelving and racks—avoid overcrowding. Use dramatic spotlighting to highlight specific items.',
+//   },
+//   {
+//     name: 'Industrial Streetwear',
+//     supportedImageTypes: ['commercial_retail', 'commercial_restaurant'],
+//     promptFragment:
+//       'Create an Industrial Streetwear store. Use raw urban materials like chain-link fencing, scaffolding, and concrete. distinct sneaker walls with backlighting. Incorporate street art or graffiti elements and neon signage. The vibe should be edgy and hype-driven.',
+//   },
+//   {
+//     name: 'Modern Contemporary',
+//     supportedImageTypes: [
+//       'exterior_facade',
+//       'exterior_backyard',
+//       'exterior_rooftop',
+//     ],
+//     promptFragment:
+//       'Redesign the exterior in a Modern Contemporary style. Use geometric box-like forms and flat roofs. Mix materials like cedar wood siding, smooth concrete, and matte black metal. Install large floor-to-ceiling windows to connect indoor and outdoor spaces.',
+//   },
+//   {
+//     name: 'Modern Farmhouse Exterior',
+//     supportedImageTypes: [
+//       'exterior_facade',
+//       'exterior_porch',
+//       'exterior_backyard',
+//     ],
+//     promptFragment:
+//       'Apply a Modern Farmhouse exterior aesthetic. Use white vertical board-and-batten siding. Install a high-contrast black standing-seam metal roof or black shingles. Use black window frames and rustic timber accents (columns or headers). Keep the look crisp and high-contrast.',
+//   },
+//   {
+//     name: 'Spanish / Mediterranean',
+//     supportedImageTypes: ['exterior_facade', 'exterior_pool', 'exterior_patio'],
+//     promptFragment:
+//       'Transform this exterior into a Spanish / Mediterranean style. Apply warm white or cream stucco texture to the walls. Use red terracotta barrel tiles for the roof. Incorporate arched windows, wrought iron details, and perhaps some decorative tile work around the entrance.',
+//   },
+//   {
+//     name: 'Craftsman',
+//     supportedImageTypes: ['exterior_facade', 'exterior_porch'],
+//     promptFragment:
+//       'Design a Craftsman style exterior. Emphasize the front porch with thick, tapered columns (often sitting on stone piers). Use a mix of siding and shingles in earth tones (greens, blues, browns). Highlight architectural details like exposed roof rafters and wide eaves.',
+//   },
+//   {
+//     name: 'Mid-Century Modern',
+//     supportedImageTypes: ['exterior_facade', 'exterior_backyard'],
+//     promptFragment:
+//       'Apply a Mid-Century Modern exterior design. Use low-pitched or flat roofs with wide, overhanging eaves. Incorporate clerestory windows. Use a material palette of brick, wood, and glass. Add a pop of color to the front door (orange or teal).',
+//   },
+//   {
+//     name: 'Modern Oasis (Concrete & Fire)',
+//     supportedImageTypes: [
+//       'exterior_backyard',
+//       'exterior_patio',
+//       'exterior_rooftop',
+//     ],
+//     promptFragment:
+//       'Design a Modern Backyard Oasis. Use large-format concrete pavers with grass or gravel grout lines. Install a sleek, rectangular gas fire pit as the focal point. Furnish with modern, weather-resistant sofas. Keep landscaping structural and minimal.',
+//   },
+//   {
+//     name: 'Rustic Outdoor Living (Pergola)',
+//     supportedImageTypes: [
+//       'exterior_backyard',
+//       'exterior_patio',
+//       'exterior_porch',
+//     ],
+//     promptFragment:
+//       'Create a Rustic Outdoor Living space. Build a wooden pergola to define the area and provide shade. Use natural flagstone for the patio surface. Incorporate a stone outdoor fireplace or pizza oven. Furnish with a large, sturdy wooden dining table.',
+//   },
+//   {
+//     name: 'English Cottage Garden',
+//     supportedImageTypes: ['exterior_backyard', 'exterior_garden'],
+//     promptFragment:
+//       'Apply an English Cottage Garden style. Avoid rigid straight lines; use winding gravel or brick paths. Fill flower beds with an abundance of mixed flowers (roses, lavender, foxgloves) for a wild, lush look. Use vintage wrought-iron furniture.',
+//   },
+//   {
+//     name: 'Xeriscaping (Desert Modern)',
+//     supportedImageTypes: [
+//       'exterior_garden',
+//       'exterior_facade',
+//       'exterior_backyard',
+//     ],
+//     promptFragment:
+//       'Design a Xeriscape (Desert Modern) garden. Remove water-hungry lawns and replace them with decorative gravel or decomposed granite. Plant drought-tolerant species like agave, yucca, and succulents. Use Corten steel or concrete planters for architectural structure.',
+//   },
+//   {
+//     name: 'Zen Garden (Japanese)',
+//     supportedImageTypes: [
+//       'exterior_garden',
+//       'exterior_backyard',
+//       'interior_sunroom',
+//     ],
+//     promptFragment:
+//       'Create a Japanese Zen Garden. Use elements like raked sand or gravel to represent water. Place large, mossy rocks deliberately. Plant Japanese maples, bamboo, and shaped evergreens. Focus on asymmetry, balance, and tranquility.',
+//   },
+//   {
+//     name: 'Formal French',
+//     supportedImageTypes: [
+//       'exterior_garden',
+//       'exterior_facade',
+//       'exterior_backyard',
+//     ],
+//     promptFragment:
+//       'Apply a Formal French Garden design. Focus on strict symmetry and geometry. Use manicured boxwood hedges to create parterres or borders. Include a central water feature or statue. Keep pathways straight and defined with crushed stone.',
+//   },
+//   {
+//     name: 'Modern Infinity',
+//     supportedImageTypes: ['exterior_pool', 'exterior_backyard'],
+//     promptFragment:
+//       'Design a Modern Infinity Pool. The water should appear flush with the deck (knife-edge or perimeter overflow) for a mirror-like effect. Use light-colored stone coping (limestone or travertine). Keep the surrounding deck uncluttered with sleek, modern loungers.',
+//   },
+//   {
+//     name: 'Tropical Lagoon',
+//     supportedImageTypes: ['exterior_pool', 'exterior_backyard'],
+//     promptFragment:
+//       'Create a Tropical Lagoon pool. Use a freeform, organic shape rather than a rectangle. Incorporate natural boulders and a waterfall feature. Use a darker plaster finish to make the water look deep and ocean-like. Surround with dense tropical landscaping.',
+//   },
+//   {
+//     name: 'Urban Lounge',
+//     supportedImageTypes: [
+//       'exterior_rooftop',
+//       'exterior_balcony',
+//       'commercial_restaurant',
+//     ],
+//     promptFragment:
+//       'Design an Urban Rooftop Lounge. Focus on the view—use seamless glass railings. Create social zones with sectional seating and fire tables. Incorporate ambient lighting (string lights, lanterns) for evening use. Add a bar area for entertaining.',
+//   },
+//   {
+//     name: 'Cozy Bistro',
+//     supportedImageTypes: ['exterior_balcony', 'exterior_patio'],
+//     promptFragment:
+//       'Maximize this small Balcony with a Cozy Bistro style. Use space-saving furniture like a foldable metal bistro set. Cover concrete floors with interlocking wood deck tiles or an outdoor rug. Add verticality with railing planters and hanging pots to add greenery without losing floor space.',
+//   },
+//   {
+//     name: 'Southern Charm',
+//     supportedImageTypes: ['exterior_porch', 'exterior_facade'],
+//     promptFragment:
+//       "Create a Southern Charm front porch. Furnish with classic white wooden rocking chairs or a porch swing. Hang Boston ferns between the columns. Paint the porch ceiling a soft 'haint blue'. The vibe should be welcoming, traditional, and slow-paced.",
+//   },
+//   {
+//     name: 'Restoration / Declutter',
+//     supportedImageTypes: ['other', 'interior_empty', 'exterior_backyard'],
+//     promptFragment:
+//       'Perform a General Restoration and Declutter. Identify any mess, garbage, or wear-and-tear in the image and remove it. Repair damaged surfaces (cracked walls, stained floors). Improve the lighting to be bright and natural. Do not significantly change the furniture style, just make the existing space look new and clean.',
+//   },
+// ];
+//
+// async function main() {
+//   const storage = new ScriptStorageService();
+//   const stylesDir = path.join(__dirname, '../styles');
+//
+//   console.log('Starting style seeding...');
+//
+//   for (const style of stylesData) {
+//     console.log(`Processing style: ${style.name}`);
+//
+//     // 1. Find the image file
+//     // Sanitize name for filename matching (remove special chars, match loose)
+//     // Actually, the user provided filenames that are mostly "Name.png".
+//     // Some have " : " replaced with " - " or similar.
+//     // Let's try exact match first, then fuzzy.
+//
+//     const files = fs.readdirSync(stylesDir);
+//     // Clean style name for comparison: "Bohemian (Boho)" -> "bohemian (boho)"
+//     // Clean filename: " Bohemian (Boho).png" -> "bohemian (boho)"
+//
+//     // Clean style name for comparison: "Restoration / Declutter" -> "restoration declutter"
+//     const targetName = style.name
+//       .toLowerCase()
+//       .replace(/[:|/]/g, ' ') // Replace separators with space
+//       .replace(/\s+/g, ' ') // Collapse spaces
+//       .trim();
+//
+//     const imageFile = files.find((f) => {
+//       const fName = f
+//         .toLowerCase()
+//         .replace('.png', '')
+//         .replace(/[:|/]/g, ' ')
+//         .replace(/\s+/g, ' ')
+//         .trim();
+//       return fName.includes(targetName) || targetName.includes(fName);
+//     });
+//
+//     if (!imageFile) {
+//       console.warn(
+//         `⚠️  Image not found for style: ${style.name}. Skipping image upload.`,
+//       );
+//       // Create style without image? Or skip?
+//       // Let's create it with a placeholder or empty string for now.
+//       continue;
+//     }
+//
+//     const filePath = path.join(stylesDir, imageFile);
+//     const destination = `styles/${Date.now()}-${imageFile.trim()}`;
+//
+//     // 2. Upload to GCS
+//     console.log(`   Uploading ${imageFile}...`);
+//     let publicUrl = '';
+//     try {
+//       const result = await storage.uploadFile(filePath, destination);
+//       publicUrl = storage.getPublicUrl(result.objectName);
+//       console.log(`   Uploaded to: ${publicUrl}`);
+//     } catch (error) {
+//       console.error(`   ❌ Upload failed:`, error);
+//       continue;
+//     }
+//
+//     // 3. Upsert Style in DB
+//     // First, connect ImageTypes. We need to find them by value.
+//     // The CSV has values like 'floor_plan_2d'.
+//
+//     const supportedTypes = style.supportedImageTypes;
+//
+//     // Validate types exist
+//     const existingTypes = await prisma.imageType.findMany({
+//       where: { value: { in: supportedTypes } },
+//       select: { value: true },
+//     });
+//     const existingValues = existingTypes.map((t) => t.value);
+//     const missingTypes = supportedTypes.filter(
+//       (t) => !existingValues.includes(t),
+//     );
+//
+//     if (missingTypes.length > 0) {
+//       console.warn(
+//         `   ⚠️  Missing ImageTypes for ${style.name}: ${missingTypes.join(', ')}. Skipping these types.`,
+//       );
+//     }
+//
+//     const validTypes = supportedTypes.filter((t) => existingValues.includes(t));
+//
+//     console.log(`   Upserting Style record...`);
+//     await prisma.style.upsert({
+//       where: { name: style.name },
+//       update: {
+//         thumbnailUrl: publicUrl,
+//         promptFragment: style.promptFragment,
+//         supportedImageTypes: {
+//           set: [], // Clear existing
+//           connect: validTypes.map((t) => ({ value: t })),
+//         },
+//       },
+//       create: {
+//         name: style.name,
+//         thumbnailUrl: publicUrl,
+//         promptFragment: style.promptFragment,
+//         supportedImageTypes: {
+//           connect: validTypes.map((t) => ({ value: t })),
+//         },
+//       },
+//     });
+//     console.log(`   ✅ Done.`);
+//   }
+// }
+//
+// main()
+//   .catch((e) => {
+//     console.error(e);
+//     process.exit(1);
+//   })
+//   .finally(async () => {
+//     await prisma.$disconnect();
+//   });

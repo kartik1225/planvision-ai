@@ -1,0 +1,260 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas  = ["plan_vision"]
+}
+
+// ==========================================
+// AUTHENTICATION (Keep this as you had it)
+// ==========================================
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique @db.VarChar(255)
+  name          String   @db.VarChar(255)
+  emailVerified Boolean  @default(false)
+  image         String?  @db.VarChar(2048)
+  createdAt     DateTime @default(now()) @db.Timestamp(6)
+  updatedAt     DateTime @updatedAt @db.Timestamp(6)
+
+  sessions      Session[]
+  accounts      Account[]
+  verifications Verification[]
+
+  // Domain Relations
+  projects    Project[]
+  inputImages InputImage[]
+
+  @@map("user")
+  @@schema("plan_vision")
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("session")
+  @@schema("plan_vision")
+}
+
+model Account {
+  id                    String    @id @default(uuid())
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now()) @db.Timestamp(6)
+  updatedAt             DateTime  @updatedAt @db.Timestamp(6)
+
+  @@map("account")
+  @@schema("plan_vision")
+}
+
+model Verification {
+  id         String    @id @default(uuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime? @default(now()) @db.Timestamp(6)
+  updatedAt  DateTime? @updatedAt @db.Timestamp(6)
+  userId     String?
+  user       User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("verification")
+  @@schema("plan_vision")
+}
+
+// ==========================================
+// CORE DOMAIN (The PlanVision Logic)
+// ==========================================
+
+model Project {
+  id        String   @id @default(uuid())
+  name      String   @db.VarChar(255)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+
+  renderConfigs RenderConfig[]
+
+  @@map("project")
+  @@schema("plan_vision")
+}
+
+// Represents the original image uploaded by the user
+model InputImage {
+  id        String   @id @default(uuid())
+  url       String   @db.VarChar(2048)
+  userId    String
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Used in configurations
+  renderConfigs     RenderConfig[] @relation("InputSource")
+  // Used as style references
+  styleReferenceFor RenderConfig[] @relation("StyleRef")
+
+  @@map("input_image")
+  @@schema("plan_vision")
+}
+
+// Defines what the image is (Living Room, Garden, Floor Plan)
+model ImageType {
+  id          String   @id @default(uuid())
+  label       String   @db.VarChar(255)
+  value       String   @unique @db.VarChar(255)
+  description String?  @db.Text
+  createdAt   DateTime @default(now()) @db.Timestamp(6)
+  updatedAt   DateTime @updatedAt @db.Timestamp(6)
+
+  projectTemplates ProjectTemplate[]
+  renderConfigs    RenderConfig[]
+  styles           Style[] // Styles valid for this image type
+  styleThumbnails  StyleThumbnail[] // Per-imageType style thumbnails
+
+  @@map("image_type")
+  @@schema("plan_vision")
+}
+
+// Defines the artistic style (Modern, Scandi, etc.)
+model Style {
+  id             String   @id @default(uuid())
+  name           String   @unique @db.VarChar(255)
+  thumbnailUrl   String   @db.Text // Legacy/fallback thumbnail
+  promptFragment String   @db.Text // The hidden text sent to AI
+  createdAt      DateTime @default(now()) @db.Timestamp(6)
+  updatedAt      DateTime @updatedAt @db.Timestamp(6)
+
+  // A style can belong to multiple image types (e.g. Modern is valid for Kitchen AND Garden)
+  imageTypes ImageType[]
+
+  // Per-image-type thumbnails for contextual display
+  thumbnails StyleThumbnail[]
+
+  renderConfigs    RenderConfig[]
+  projectTemplates ProjectTemplate[] // Templates using this as default style
+
+  @@map("style")
+  @@schema("plan_vision")
+}
+
+// Stores contextual thumbnails for each Style + ImageType combination
+model StyleThumbnail {
+  id          String   @id @default(uuid())
+  styleId     String
+  imageTypeId String
+  thumbnailUrl String  @db.Text
+  createdAt   DateTime @default(now()) @db.Timestamp(6)
+
+  style     Style     @relation(fields: [styleId], references: [id], onDelete: Cascade)
+  imageType ImageType @relation(fields: [imageTypeId], references: [id], onDelete: Cascade)
+
+  @@unique([styleId, imageTypeId]) // One thumbnail per style-imageType pair
+  @@map("style_thumbnail")
+  @@schema("plan_vision")
+}
+
+// Stores the UI Cards for the "Home Screen"
+model ProjectTemplate {
+  id          String   @id @default(uuid())
+  title       String   @db.VarChar(255)
+  description String?  @db.Text
+
+  // Thumbnail fields - supports before/after interactive preview
+  thumbnailUrl          String  @db.VarChar(2048) // Keep for backward compat (display thumbnail)
+  originalThumbnailUrl  String? @db.VarChar(2048) // "Before" image uploaded by admin
+  generatedThumbnailUrl String? @db.VarChar(2048) // AI-generated "after" image
+
+  sampleImageUrls String[]
+
+  // Image type relation
+  defaultImageTypeId String
+  defaultImageType   ImageType @relation(fields: [defaultImageTypeId], references: [id])
+
+  // Default style for thumbnail generation
+  defaultStyleId String?
+  defaultStyle   Style?  @relation(fields: [defaultStyleId], references: [id])
+
+  // Generation metadata (stores colors, perspective, instructions used)
+  generationOptions Json?
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+
+  @@map("project_template")
+  @@schema("plan_vision")
+}
+
+// The "Recipe". Combines an image, a style, and user settings.
+model RenderConfig {
+  id        String @id @default(uuid())
+  projectId String
+
+  // 1. The Source
+  inputImageId String
+  imageTypeId  String
+
+  // 2. The Style (Either a preset Style OR a custom uploaded image)
+  styleId          String?
+  styleReferenceId String?
+
+  // 3. User Settings
+  customInstructions String? @db.Text
+  colorPrimaryHex    String?
+  colorSecondaryHex  String?
+  colorNeutralHex    String?
+  perspectiveAngle   Int? // For 2D/3D maps
+  perspectiveX       Int?
+  perspectiveY       Int?
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+
+  project        Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  inputImage     InputImage  @relation("InputSource", fields: [inputImageId], references: [id])
+  imageType      ImageType   @relation(fields: [imageTypeId], references: [id])
+  style          Style?      @relation(fields: [styleId], references: [id])
+  styleReference InputImage? @relation("StyleRef", fields: [styleReferenceId], references: [id])
+
+  generations Generation[]
+
+  @@map("render_config")
+  @@schema("plan_vision")
+}
+
+// The "Result". The actual AI output.
+model Generation {
+  id             String @id @default(uuid())
+  renderConfigId String
+
+  promptUsed     String  @db.Text
+  outputImageUrl String? @db.Text
+  status         String  @default("pending") // pending, completed, failed
+  errorMessage   String?
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+
+  renderConfig RenderConfig @relation(fields: [renderConfigId], references: [id], onDelete: Cascade)
+
+  @@map("generation")
+  @@schema("plan_vision")
+}

@@ -1,0 +1,943 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme plan_vision -destination "generic/platform=iOS Simulator" build
+
+2025-11-23 22:12:09.895 xcodebuild[36251:515722]  DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2025-11-23 22:12:09.973 xcodebuild[36251:515685] [MT] DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'plan_vision' in project 'plan_vision' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/Preview Content/Preview Assets.xcassets /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: d723351e566325a96e4051339de6b592
+Build description path: /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/XCBuildData/d723351e566325a96e4051339de6b592.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk /Users/kartik/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.1-23B77-90cf18a4295e390e64c810bc6bd7acbc.sdkstatcache
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -o /Users/kartik/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.1-23B77-90cf18a4295e390e64c810bc6bd7acbc.sdkstatcache
+
+ProcessInfoPlistFile /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/Info.plist /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/empty-plan_vision.plist (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-infoPlistUtility /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/empty-plan_vision.plist -producttype com.apple.product-type.application -genpkginfo /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/assetcatalog_generated_info.plist -o /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/Info.plist
+
+SwiftDriver plan_vision normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name plan_vision -Onone -enforce-exclusivity\=checked @/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -target x86_64-apple-ios18.0-simulator -g -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64 -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.1-23B77-90cf18a4295e390e64c810bc6bd7acbc.sdkstatcache -output-file-map /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision_const_extract_protocols.json -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-generated-files.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-own-target-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-all-target-headers.hmap -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-project-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources-normal/x86_64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/x86_64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-Swift.h -working-directory /Users/kartik/Code/snhu/plan_vision/plan_vision -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver plan_vision normal arm64 com.apple.xcode.tools.swift.compiler (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name plan_vision -Onone -enforce-exclusivity\=checked @/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -target arm64-apple-ios18.0-simulator -g -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64 -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.1-23B77-90cf18a4295e390e64c810bc6bd7acbc.sdkstatcache -output-file-map /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision_const_extract_protocols.json -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-generated-files.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-own-target-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-all-target-headers.hmap -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-project-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources-normal/arm64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/arm64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-Swift.h -working-directory /Users/kartik/Code/snhu/plan_vision/plan_vision -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_intrinsics-1P7NF88JIATOO2SF5Q23ZTIF9.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Darwin-DXPCGJPH6S95PLZ2M6OYPPTCZ.pcm
+
+SwiftCompile normal arm64 Compiling\ Haptics.swift,\ Modifiers.swift,\ Endpoint.swift,\ HttpClient.swift,\ NetworkError.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/Haptics.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/Modifiers.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/Endpoint.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/HttpClient.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/NetworkError.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/Haptics.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/Modifiers.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/Endpoint.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/HttpClient.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/NetworkError.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ ImageSaver.swift,\ GlassButton.swift,\ GlassCard.swift,\ GlassTextField.swift,\ DesignSystem.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/utils/ImageSaver.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassButton.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassCard.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassTextField.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/DesignSystem.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/utils/ImageSaver.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassButton.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassCard.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassTextField.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/DesignSystem.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ ContentView.swift,\ SessionManager.swift,\ GlassModifier.swift,\ ImagePicker.swift,\ Color+Hex.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/app/ContentView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/app/SessionManager.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/components/GlassModifier.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/components/ImagePicker.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/extensions/Color+Hex.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/app/ContentView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/app/SessionManager.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/components/GlassModifier.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/components/ImagePicker.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/extensions/Color+Hex.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ TokenManager.swift,\ Config.swift,\ AuthResponseDTO.swift,\ SessionResponseDTO.swift,\ SocialLoginDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/storage/TokenManager.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/Config.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/AuthResponseDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/SessionResponseDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/SocialLoginDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/storage/TokenManager.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/Config.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/AuthResponseDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/SessionResponseDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/SocialLoginDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ AuthEndpoint.swift,\ AuthService.swift,\ AuthUser.swift,\ LoginView.swift,\ LoginViewModel.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/AuthEndpoint.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/AuthService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/domain/AuthUser.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/login/LoginView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/login/LoginViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/AuthEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/AuthService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/domain/AuthUser.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/login/LoginView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/login/LoginViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ Style.swift,\ TemplateCardView.swift,\ HomeView.swift,\ HomeViewModel.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/Style.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/components/TemplateCardView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/home/HomeView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/home/HomeViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/Style.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/components/TemplateCardView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/home/HomeView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/home/HomeViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ VisionCone.swift,\ ColorPaletteCard.swift,\ ModifySheetView.swift,\ ColorSelectionStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/common/VisionCone.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/components/ColorPaletteCard.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/components/ModifySheetView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ColorSelectionStepView.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/common/VisionCone.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/components/ColorPaletteCard.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/components/ModifySheetView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ColorSelectionStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ ProjectService.swift,\ ColorPalette.swift,\ ImageType.swift,\ Project.swift,\ ProjectTemplate.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ProjectService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ColorPalette.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ImageType.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/Project.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ProjectTemplate.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ProjectService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ColorPalette.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ImageType.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/Project.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ProjectTemplate.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ SignupView.swift,\ SignupViewModel.swift,\ ProfileView.swift,\ CreateReqDTOs.swift,\ GenerationStatusDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/signup/SignupView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/signup/SignupViewModel.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/profile/ProfileView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/CreateReqDTOs.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/GenerationStatusDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/signup/SignupView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/signup/SignupViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/profile/ProfileView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/CreateReqDTOs.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/GenerationStatusDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ RenderConfigWizardView.swift,\ ProjectView.swift,\ plan_visionApp.swift,\ GeneratedAssetSymbols.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/RenderConfigWizardView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/ProjectView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/plan_visionApp.swift /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/RenderConfigWizardView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/ProjectView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/plan_visionApp.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ plan_vision (in target 'plan_vision' from project 'plan_vision')
+
+EmitSwiftModule normal arm64 (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/simd-6GOHB0O0UYCG1W96LFLCO6207.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling TokenManager.swift, Config.swift, AuthResponseDTO.swift, SessionResponseDTO.swift, SocialLoginDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ ProjectEndpoint.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ProjectEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ProjectEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ObjectiveC-CLSR1L0F9TN0G43JN1FIACO3S.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling ProjectService.swift, ColorPalette.swift, ImageType.swift, Project.swift, ProjectTemplate.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MachO-6PR0CYX6P0QVXG5QBO6MK9PEO.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling Haptics.swift, Modifiers.swift, Endpoint.swift, HttpClient.swift, NetworkError.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ ColorService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ColorService.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ColorService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_object-23EUXGTWP0C571N2XWB2R55AH.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling ProjectEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ InputImageEndpoint.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/InputImageEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/InputImageEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 Compiling\ InputImageService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/InputImageService.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/InputImageService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_workgroup-E2A1BPPHJTRHI95FXSRLIXN3L.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling RenderConfigWizardView.swift, ProjectView.swift, plan_visionApp.swift, GeneratedAssetSymbols.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ HomeService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/HomeService.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/HomeService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling ColorService.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ ProjectTemplateDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ProjectTemplateDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ProjectTemplateDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling InputImageEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ ImageTypeDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ImageTypeDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ImageTypeDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Dispatch-8AUT3IBPI4YYEPQTND2XAS67T.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling ImageSaver.swift, GlassButton.swift, GlassCard.swift, GlassTextField.swift, DesignSystem.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ ReviewStepView.swift,\ StyleSelectionStepView.swift,\ ImagePickerView.swift,\ RenderConfigBuilder.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ReviewStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/StyleSelectionStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/ImagePickerView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/RenderConfigBuilder.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ReviewStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/StyleSelectionStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/ImagePickerView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/RenderConfigBuilder.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling InputImageService.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ ImageTypeStepView.swift,\ InputImageStepView.swift,\ InteractiveMapStepView.swift,\ ResultStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ImageTypeStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/InputImageStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/InteractiveMapStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ResultStepView.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ImageTypeStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/InputImageStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/InteractiveMapStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ResultStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Spatial-F1MWE1RB1C73ZZF0WDKNFTRPS.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling SignupView.swift, SignupViewModel.swift, ProfileView.swift, CreateReqDTOs.swift, GenerationStatusDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ContentView.swift, SessionManager.swift, GlassModifier.swift, ImagePicker.swift, Color+Hex.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreFoundation-1SQCOFBT960ND10LLQGPWBYHC.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/XPC-EEH12NMGPTQAXFERV6BSCAPU7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/dnssd-BXDLZWCR4PJS2NTVAE87A9M3B.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling AuthEndpoint.swift, AuthService.swift, AuthUser.swift, LoginView.swift, LoginViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal arm64 Compiling HomeService.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os-D8EFOZQIXI4DJULXE4A0DNU4X.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling ProjectTemplateDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for plan_vision (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriver\ Compilation\ Requirements plan_vision normal arm64 com.apple.xcode.tools.swift.compiler (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name plan_vision -Onone -enforce-exclusivity\=checked @/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -target arm64-apple-ios18.0-simulator -g -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64 -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.1-23B77-90cf18a4295e390e64c810bc6bd7acbc.sdkstatcache -output-file-map /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision_const_extract_protocols.json -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-generated-files.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-own-target-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-all-target-headers.hmap -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-project-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources-normal/arm64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/arm64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-Swift.h -working-directory /Users/kartik/Code/snhu/plan_vision/plan_vision -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling ImageTypeDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+Copy /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftmodule (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftmodule /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftdoc (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftdoc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.abi.json (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.abi.json /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftsourceinfo (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftsourceinfo /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CFNetwork-5WAUPOLBGHPL9C9D7Q0FRV6GC.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Security-7OYFG0B0Q35NLELA4CCVDZ1JH.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioTypes-5H4ASS4BF0O6V0XL2CBNK7IYC.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreGraphics-D2RD9077WWJC28XVEECH6VV3S.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling Style.swift, TemplateCardView.swift, HomeView.swift, HomeViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 Compiling\ StyleDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/StyleDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal arm64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/StyleDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudio-63QWGVPBN86WKZ6UAB3VXKDEX.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Foundation-C6BUZ2WBL9PZXCHG28LXEZCWP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreText-DDS2INRSD5XCXR0DLFROU9S9Y.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ImageIO-320Z3MY9ST2AYV7CUQ3XSN7GH.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling StyleDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreData-7MHHHFJU7XSNYF5QANBVYZS8S.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/IOSurface-EBLWUFT3N3P8N8M39DQNQBGOF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreTransferable-2DSD3CMPNOPUXB2JLNVEZMG33.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OpenGLES-C2GNHJCH6HLKKEBO4PNI6O97W.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Network-7O9KNDACCISUH8G6J2GAXFQTH.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIUtilities-5YG8TEB2FPV7GJ5XE3JWUDPYT.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UserNotifications-EAEIIZZOQJN8PAIREN668TT5B.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/FileProvider-DY2MTIQ23ZF52VPNLXQDOJONA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Accessibility-DRD2CX06X8WTKTH2U1EQYRK02.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_LocationEssentials-95KHKVV9593H89EETDXBJK7OT.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling VisionCone.swift, ColorPaletteCard.swift, ModifySheetView.swift, ColorSelectionStepView.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DataDetection-93OUNBSI5B95GAPO88DQLEVV0.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMIDI-79Q05MGPL5K3I62A9L8GZXDV7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/LocalAuthentication-APGTCSIF4JP71DZ6KOBX1VOTG.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Metal-CT2ST1MAEAM767KH3ODGULY1E.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Symbols-B9ZXZ9ASCYM0FCUT0UFAZO06N.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UniformTypeIdentifiers-8UKW6I2GMYMEX9YB2Q0E0F6YA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreLocation-GBOSIQBN3VOLKVO0CMECNN3C.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OSLog-CGOJHBI6K64L2RHRS9M5S46WR.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVRouting-1UZ2YYH430NGNJNYY6OZ4N3M9.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioToolbox-B933YUU5R2SHKTDZC586TBUVB.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreVideo-5QWG2QZIG6Z2OZ7J0FPQB6KO9.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMedia-1A33JLQIRPK4BHCLNTFK0GOZ8.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/QuartzCore-2AR86TUY7I13TZOOFQL5JGUAB.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreImage-F155VI0DS3SKI3163M8SATPZ5.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUICore-63YN13HHCJKNSZIHNC1AEWQBW.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MediaToolbox-7X3HKBACV43OXUDA3MY4D0HAQ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFAudio-2GJ3LUMKLPKWZ2ZKIEP7YVTD7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIKit-41ZV0SV9D6XI8EU9BWYVBWP6I.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFoundation-6JPCK2PSD1KWI9G9TDN6C5YHK.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling ReviewStepView.swift, StyleSelectionStepView.swift, ImagePickerView.swift, RenderConfigBuilder.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Photos-DWUYQDGXPNB0CENVL1H1QN7WA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AuthenticationServices-8P2OKGLD8H46YTO57YDE7XYG0.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUI-BTVF6GDVXCLL9W0KPXZCTADP3.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/PhotosUI-6B5YPP2TGB2FGXBR8KZPL673B.pcm
+
+SwiftEmitModule normal x86_64 Emitting\ module\ for\ plan_vision (in target 'plan_vision' from project 'plan_vision')
+
+EmitSwiftModule normal x86_64 (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ RenderConfigBuilder.swift,\ RenderConfigWizardView.swift,\ ProjectView.swift,\ plan_visionApp.swift,\ GeneratedAssetSymbols.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/RenderConfigBuilder.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/RenderConfigWizardView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/ProjectView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/plan_visionApp.swift /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/RenderConfigBuilder.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/RenderConfigWizardView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/ProjectView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/plan_visionApp.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ ColorPaletteCard.swift,\ ModifySheetView.swift,\ ColorSelectionStepView.swift,\ ImageTypeStepView.swift,\ InputImageStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/components/ColorPaletteCard.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/components/ModifySheetView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ColorSelectionStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ImageTypeStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/InputImageStepView.swift (in target 'plan_vision' from project 'plan_vision')
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/components/ColorPaletteCard.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/components/ModifySheetView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ColorSelectionStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ImageTypeStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/InputImageStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ ProjectService.swift,\ ColorPalette.swift,\ ImageType.swift,\ Project.swift,\ ProjectTemplate.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ProjectService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ColorPalette.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ImageType.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/Project.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ProjectTemplate.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ProjectService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ColorPalette.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ImageType.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/Project.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/ProjectTemplate.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ Style.swift,\ TemplateCardView.swift,\ HomeView.swift,\ HomeViewModel.swift,\ VisionCone.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/Style.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/components/TemplateCardView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/home/HomeView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/home/HomeViewModel.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/common/VisionCone.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/domain/Style.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/components/TemplateCardView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/home/HomeView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/home/HomeViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/common/VisionCone.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ GlassButton.swift,\ GlassCard.swift,\ GlassTextField.swift,\ DesignSystem.swift,\ Haptics.swift,\ Modifiers.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassButton.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassCard.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassTextField.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/DesignSystem.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/Haptics.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/Modifiers.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassButton.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassCard.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/components/GlassTextField.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/DesignSystem.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/Haptics.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/design/Modifiers.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ Endpoint.swift,\ HttpClient.swift,\ NetworkError.swift,\ TokenManager.swift,\ Config.swift,\ AuthResponseDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/Endpoint.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/HttpClient.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/NetworkError.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/storage/TokenManager.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/Config.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/AuthResponseDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/Endpoint.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/HttpClient.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/networking/NetworkError.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/storage/TokenManager.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/core/Config.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/AuthResponseDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ SessionResponseDTO.swift,\ SocialLoginDTO.swift,\ AuthEndpoint.swift,\ AuthService.swift,\ AuthUser.swift,\ LoginView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/SessionResponseDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/SocialLoginDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/AuthEndpoint.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/AuthService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/domain/AuthUser.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/login/LoginView.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/SessionResponseDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/DTOs/SocialLoginDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/AuthEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/data/AuthService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/domain/AuthUser.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/login/LoginView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ ImageTypeDTO.swift,\ InputImageDTO.swift,\ ProjectDTO.swift,\ ProjectTemplateDTO.swift,\ StyleDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ImageTypeDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/InputImageDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ProjectDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ProjectTemplateDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/StyleDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ImageTypeDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/InputImageDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ProjectDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/ProjectTemplateDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/StyleDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ ContentView.swift,\ SessionManager.swift,\ GlassModifier.swift,\ ImagePicker.swift,\ Color+Hex.swift,\ ImageSaver.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/app/ContentView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/app/SessionManager.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/components/GlassModifier.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/components/ImagePicker.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/extensions/Color+Hex.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/utils/ImageSaver.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/app/ContentView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/app/SessionManager.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/components/GlassModifier.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/components/ImagePicker.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/extensions/Color+Hex.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/common/utils/ImageSaver.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ InteractiveMapStepView.swift,\ ResultStepView.swift,\ ReviewStepView.swift,\ StyleSelectionStepView.swift,\ ImagePickerView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/InteractiveMapStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ResultStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ReviewStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/StyleSelectionStepView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/ImagePickerView.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/InteractiveMapStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ResultStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/ReviewStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/steps/StyleSelectionStepView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/presentation/render_config/ImagePickerView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 Compiling\ LoginViewModel.swift,\ SignupView.swift,\ SignupViewModel.swift,\ ProfileView.swift,\ CreateReqDTOs.swift,\ GenerationStatusDTO.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/login/LoginViewModel.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/signup/SignupView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/signup/SignupViewModel.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/profile/ProfileView.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/CreateReqDTOs.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/GenerationStatusDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/login/LoginViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/signup/SignupView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/auth/presentation/signup/SignupViewModel.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/profile/ProfileView.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/CreateReqDTOs.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/DTOs/GenerationStatusDTO.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftDriverJobDiscovery normal x86_64 Emitting module for plan_vision (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriver\ Compilation\ Requirements plan_vision normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name plan_vision -Onone -enforce-exclusivity\=checked @/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -target x86_64-apple-ios18.0-simulator -g -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64 -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.1-23B77-90cf18a4295e390e64c810bc6bd7acbc.sdkstatcache -output-file-map /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision_const_extract_protocols.json -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-generated-files.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-own-target-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-all-target-headers.hmap -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-project-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources-normal/x86_64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/x86_64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-Swift.h -working-directory /Users/kartik/Code/snhu/plan_vision/plan_vision -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal x86_64 Compiling ImageTypeDTO.swift, InputImageDTO.swift, ProjectDTO.swift, ProjectTemplateDTO.swift, StyleDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 Compiling\ ColorService.swift,\ HomeService.swift,\ InputImageEndpoint.swift,\ InputImageService.swift,\ ProjectEndpoint.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ColorService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/HomeService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/InputImageEndpoint.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/InputImageService.swift /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ProjectEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ColorService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/HomeService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/InputImageEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/InputImageService.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftCompile normal x86_64 /Users/kartik/Code/snhu/plan_vision/plan_vision/plan_vision/src/features/projects/data/ProjectEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+
+SwiftDriverJobDiscovery normal x86_64 Compiling Endpoint.swift, HttpClient.swift, NetworkError.swift, TokenManager.swift, Config.swift, AuthResponseDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftMergeGeneratedHeaders /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/plan_vision-Swift.h /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-Swift.h /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-Swift.h (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-swiftHeaderTool -arch arm64 /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-Swift.h -arch x86_64 /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-Swift.h -o /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/plan_vision-Swift.h
+
+Copy /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftmodule (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftmodule /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
+
+Copy /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/x86_64-apple-ios-simulator.swiftdoc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftdoc (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftdoc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/x86_64-apple-ios-simulator.swiftdoc
+
+Copy /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/x86_64-apple-ios-simulator.abi.json /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.abi.json (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.abi.json /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/x86_64-apple-ios-simulator.abi.json
+
+Copy /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftsourceinfo (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftsourceinfo /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling ImageTypeStepView.swift, InputImageStepView.swift, InteractiveMapStepView.swift, ResultStepView.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriver\ Compilation plan_vision normal arm64 com.apple.xcode.tools.swift.compiler (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name plan_vision -Onone -enforce-exclusivity\=checked @/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -target arm64-apple-ios18.0-simulator -g -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64 -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.1-23B77-90cf18a4295e390e64c810bc6bd7acbc.sdkstatcache -output-file-map /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision_const_extract_protocols.json -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-generated-files.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-own-target-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-all-target-headers.hmap -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-project-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources-normal/arm64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/arm64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-Swift.h -working-directory /Users/kartik/Code/snhu/plan_vision/plan_vision -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/Binary/plan_vision.debug.dylib normal arm64 (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -O0 -L/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -filelist /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.LinkFileList -install_name @rpath/plan_vision.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.swiftmodule @/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/Binary/plan_vision.debug.dylib
+
+SwiftDriverJobDiscovery normal x86_64 Compiling ProjectService.swift, ColorPalette.swift, ImageType.swift, Project.swift, ProjectTemplate.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling GlassButton.swift, GlassCard.swift, GlassTextField.swift, DesignSystem.swift, Haptics.swift, Modifiers.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling ColorService.swift, HomeService.swift, InputImageEndpoint.swift, InputImageService.swift, ProjectEndpoint.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling LoginViewModel.swift, SignupView.swift, SignupViewModel.swift, ProfileView.swift, CreateReqDTOs.swift, GenerationStatusDTO.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling RenderConfigBuilder.swift, RenderConfigWizardView.swift, ProjectView.swift, plan_visionApp.swift, GeneratedAssetSymbols.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling Style.swift, TemplateCardView.swift, HomeView.swift, HomeViewModel.swift, VisionCone.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling SessionResponseDTO.swift, SocialLoginDTO.swift, AuthEndpoint.swift, AuthService.swift, AuthUser.swift, LoginView.swift (in target 'plan_vision' from project 'plan_vision')
+
+ConstructStubExecutorLinkFileList /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-ExecutorLinkFileList-normal-arm64.txt (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    construct-stub-executor-link-file-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/Binary/plan_vision.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'plan_vision' from project 'plan_vision')
+
+Ld /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/Binary/plan_vision normal arm64 (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -O0 -L/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-ExecutorLinkFileList-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision.app-Simulated.xcent.der /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/Binary/plan_vision.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/Binary/plan_vision
+
+SwiftDriverJobDiscovery normal x86_64 Compiling ContentView.swift, SessionManager.swift, GlassModifier.swift, ImagePicker.swift, Color+Hex.swift, ImageSaver.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling InteractiveMapStepView.swift, ResultStepView.swift, ReviewStepView.swift, StyleSelectionStepView.swift, ImagePickerView.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling ColorPaletteCard.swift, ModifySheetView.swift, ColorSelectionStepView.swift, ImageTypeStepView.swift, InputImageStepView.swift (in target 'plan_vision' from project 'plan_vision')
+
+SwiftDriver\ Compilation plan_vision normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name plan_vision -Onone -enforce-exclusivity\=checked @/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -target x86_64-apple-ios18.0-simulator -g -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64 -c -j12 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.1-23B77-90cf18a4295e390e64c810bc6bd7acbc.sdkstatcache -output-file-map /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/kartik/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision_const_extract_protocols.json -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-generated-files.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-own-target-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-all-target-headers.hmap -Xcc -iquote -Xcc /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-project-headers.hmap -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources-normal/x86_64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources/x86_64 -Xcc -I/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-Swift.h -working-directory /Users/kartik/Code/snhu/plan_vision/plan_vision -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/Binary/plan_vision.debug.dylib normal x86_64 (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios18.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -O0 -L/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -filelist /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.LinkFileList -install_name @rpath/plan_vision.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.swiftmodule @/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/Binary/plan_vision.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-ExecutorLinkFileList-normal-x86_64.txt (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    construct-stub-executor-link-file-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/Binary/plan_vision.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-ExecutorLinkFileList-normal-x86_64.txt
+note: Using stub executor library with Swift entry point. (in target 'plan_vision' from project 'plan_vision')
+
+CreateUniversalBinary /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/plan_vision.debug.dylib normal arm64\ x86_64 (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/Binary/plan_vision.debug.dylib /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/Binary/plan_vision.debug.dylib -output /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/plan_vision.debug.dylib
+
+Ld /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/Binary/plan_vision normal x86_64 (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios18.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk -O0 -L/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -F/Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-DebugDylibPath-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-DebugDylibInstallName-normal-x86_64.txt -Xlinker -filelist -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision-ExecutorLinkFileList-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision.app-Simulated.xcent.der /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/Binary/plan_vision.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/Binary/plan_vision
+
+CreateUniversalBinary /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/plan_vision normal arm64\ x86_64 (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/Binary/plan_vision /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/Binary/plan_vision -output /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/plan_vision
+
+CopySwiftLibs /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/plan_vision.debug.dylib --scan-folder /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/Frameworks --scan-folder /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/PlugIns --scan-folder /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/SystemExtensions --scan-folder /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+
+ExtractAppIntentsMetadata (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name plan_vision --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk --xcode-version 17B100 --platform-family iOS --deployment-target 18.0 --bundle-identifier app.remux.plan-vision --output /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app --target-triple arm64-apple-ios18.0-simulator --target-triple x86_64-apple-ios18.0-simulator --binary-file /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/plan_vision --dependency-file /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision_dependency_info.dat --dependency-file /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision_dependency_info.dat --stringsdata-file /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --stringsdata-file /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.SwiftFileList --source-file-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.SwiftFileList --metadata-file-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision.DependencyMetadataFileList --static-metadata-file-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision.DependencyStaticMetadataFileList --swift-const-vals-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/arm64/plan_vision.SwiftConstValuesFileList --swift-const-vals-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/Objects-normal/x86_64/plan_vision.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2025-11-23 22:12:23.843 appintentsmetadataprocessor[36409:516451] Starting appintentsmetadataprocessor export
+2025-11-23 22:12:23.845 appintentsmetadataprocessor[36409:516451] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+AppIntentsSSUTraining (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/Info.plist --temp-dir-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/ssu --bundle-id app.remux.plan-vision --product-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app --extracted-metadata-path /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/Metadata.appintents --metadata-file-list /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision.DependencyMetadataFileList --archive-ssu-assets
+2025-11-23 22:12:23.866 appintentsnltrainingprocessor[36410:516452] Parsing options for appintentsnltrainingprocessor
+2025-11-23 22:12:23.866 appintentsnltrainingprocessor[36410:516452] No AppShortcuts found - Skipping.
+
+CodeSign /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/plan_vision.debug.dylib (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/plan_vision.debug.dylib
+
+CodeSign /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/__preview.dylib (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app/__preview.dylib
+
+CodeSign /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Intermediates.noindex/plan_vision.build/Debug-iphonesimulator/plan_vision.build/plan_vision.app.xcent --timestamp\=none --generate-entitlement-der /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app
+
+RegisterExecutionPolicyException /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-RegisterExecutionPolicyException /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app
+
+Validate /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    builtin-validationUtility /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app (in target 'plan_vision' from project 'plan_vision')
+    cd /Users/kartik/Code/snhu/plan_vision/plan_vision
+    /usr/bin/touch -c /Users/kartik/Library/Developer/Xcode/DerivedData/plan_vision-cchgcveytvppkcbkmklwcnstamfs/Build/Products/Debug-iphonesimulator/plan_vision.app
+
+** BUILD SUCCEEDED **
+

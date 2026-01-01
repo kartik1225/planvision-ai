@@ -1,0 +1,56 @@
+# =============================================================================
+# Xcode / iOS .gitignore
+# =============================================================================
+
+# Xcode user data
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# Build artifacts
+build/
+DerivedData/
+*.moved-aside
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Dependency managers
+Pods/
+Carthage/Build/
+.build/
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+
+# CocoaPods
+*.xcworkspace
+!*.xcodeproj/project.xcworkspace/
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Archives
+*.xcarchive
+
+# Code coverage
+*.gcno
+*.gcda
+*.profraw
+*.profdata
+
+# Instruments
+*.trace
+
+# App packaging
+*.app
+
+# Crashlytics
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# OS
+.DS_Store

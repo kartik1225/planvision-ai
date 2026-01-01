@@ -1,0 +1,1246 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns a welcome string."
+          }
+        },
+        "summary": "Health check / Welcome message.",
+        "tags": [
+          "App"
+        ]
+      }
+    },
+    "/api/auth/sign-in/email": {
+      "post": {
+        "operationId": "AuthDocsController_signIn",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignInDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User signed in successfully"
+          }
+        },
+        "summary": "Sign in with email and password",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/auth/sign-up/email": {
+      "post": {
+        "operationId": "AuthDocsController_signUp",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignUpDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User signed up successfully"
+          }
+        },
+        "summary": "Sign up with email and password",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/auth/sign-out": {
+      "post": {
+        "operationId": "AuthDocsController_signOut",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "User signed out successfully"
+          }
+        },
+        "summary": "Sign out current session",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/auth/session": {
+      "get": {
+        "operationId": "AuthDocsController_getSession",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Current session data"
+          }
+        },
+        "summary": "Get current session",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/users/me": {
+      "get": {
+        "operationId": "UserController_getMe",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns the authenticated user profile."
+          },
+          "401": {
+            "description": "Unauthorized. Session is missing or invalid."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Get current user profile.",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/image-types": {
+      "post": {
+        "operationId": "ImageTypeController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateImageTypeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Image type created."
+          }
+        },
+        "summary": "Create a new image type (admin use).",
+        "tags": [
+          "Image Types"
+        ]
+      },
+      "get": {
+        "operationId": "ImageTypeController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of image types."
+          }
+        },
+        "summary": "List all image types sorted by label.",
+        "tags": [
+          "Image Types"
+        ]
+      }
+    },
+    "/image-types/{id}": {
+      "get": {
+        "operationId": "ImageTypeController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Image type details."
+          },
+          "404": {
+            "description": "Image type not found."
+          }
+        },
+        "summary": "Get a single image type by ID.",
+        "tags": [
+          "Image Types"
+        ]
+      },
+      "patch": {
+        "operationId": "ImageTypeController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateImageTypeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Image type updated."
+          },
+          "404": {
+            "description": "Image type not found."
+          }
+        },
+        "summary": "Update label/value/description.",
+        "tags": [
+          "Image Types"
+        ]
+      },
+      "delete": {
+        "operationId": "ImageTypeController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Image type deleted."
+          },
+          "404": {
+            "description": "Image type not found."
+          }
+        },
+        "summary": "Delete an image type.",
+        "tags": [
+          "Image Types"
+        ]
+      }
+    },
+    "/styles": {
+      "post": {
+        "operationId": "StyleController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStyleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Style created."
+          }
+        },
+        "summary": "Create a new style entry.",
+        "tags": [
+          "Styles"
+        ]
+      },
+      "get": {
+        "operationId": "StyleController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of styles."
+          }
+        },
+        "summary": "List all styles alphabetically.",
+        "tags": [
+          "Styles"
+        ]
+      }
+    },
+    "/styles/{id}": {
+      "get": {
+        "operationId": "StyleController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Style details."
+          },
+          "404": {
+            "description": "Style not found."
+          }
+        },
+        "summary": "Get a single style by ID.",
+        "tags": [
+          "Styles"
+        ]
+      },
+      "patch": {
+        "operationId": "StyleController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStyleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Style updated."
+          },
+          "404": {
+            "description": "Style not found."
+          }
+        },
+        "summary": "Update style fields.",
+        "tags": [
+          "Styles"
+        ]
+      },
+      "delete": {
+        "operationId": "StyleController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Style deleted."
+          },
+          "404": {
+            "description": "Style not found."
+          }
+        },
+        "summary": "Delete a style.",
+        "tags": [
+          "Styles"
+        ]
+      }
+    },
+    "/projects": {
+      "post": {
+        "operationId": "ProjectController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The project has been successfully created."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Create a new project.",
+        "tags": [
+          "Projects"
+        ]
+      },
+      "get": {
+        "operationId": "ProjectController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of projects."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "List all projects belonging to the current user.",
+        "tags": [
+          "Projects"
+        ]
+      }
+    },
+    "/projects/{id}": {
+      "get": {
+        "operationId": "ProjectController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The project details."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Project not found or does not belong to user."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Get a specific project by ID.",
+        "tags": [
+          "Projects"
+        ]
+      },
+      "patch": {
+        "operationId": "ProjectController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProjectDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The updated project."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Project not found or does not belong to user."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Update a project.",
+        "tags": [
+          "Projects"
+        ]
+      },
+      "delete": {
+        "operationId": "ProjectController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The project has been successfully deleted."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Project not found or does not belong to user."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Delete a project.",
+        "tags": [
+          "Projects"
+        ]
+      }
+    },
+    "/input-images": {
+      "post": {
+        "operationId": "InputImageController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInputImageDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Image registered successfully."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Register a new uploaded image URL for the current user.",
+        "tags": [
+          "Input Images"
+        ]
+      },
+      "get": {
+        "operationId": "InputImageController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of input images."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "List input images for the current user.",
+        "tags": [
+          "Input Images"
+        ]
+      }
+    },
+    "/input-images/upload": {
+      "post": {
+        "operationId": "InputImageController_upload",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "File uploaded and registered successfully."
+          },
+          "400": {
+            "description": "Bad Request. File is missing."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Upload a file to Google Cloud Storage and register it.",
+        "tags": [
+          "Input Images"
+        ]
+      }
+    },
+    "/input-images/{id}/url": {
+      "get": {
+        "operationId": "InputImageController_getSignedUrl",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Signed URL returned."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Image not found or does not belong to user."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Generate a signed URL for downloading the image.",
+        "tags": [
+          "Input Images"
+        ]
+      }
+    },
+    "/input-images/{id}": {
+      "get": {
+        "operationId": "InputImageController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Image details."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Image not found or does not belong to user."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Get a single uploaded image by ID (must belong to user).",
+        "tags": [
+          "Input Images"
+        ]
+      },
+      "delete": {
+        "operationId": "InputImageController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Image record deleted."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Image not found or does not belong to user."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Delete an uploaded image record.",
+        "tags": [
+          "Input Images"
+        ]
+      }
+    },
+    "/render-configs": {
+      "post": {
+        "operationId": "RenderConfigController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRenderConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Render config created."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Create a render job with specified settings.",
+        "tags": [
+          "Render Configs"
+        ]
+      },
+      "get": {
+        "operationId": "RenderConfigController_findAll",
+        "parameters": [
+          {
+            "name": "projectId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of render configs."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "List render configs for a project (provide projectId).",
+        "tags": [
+          "Render Configs"
+        ]
+      }
+    },
+    "/render-configs/{id}": {
+      "get": {
+        "operationId": "RenderConfigController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Render config details."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Render config not found or access denied."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Get a single render config by ID.",
+        "tags": [
+          "Render Configs"
+        ]
+      },
+      "patch": {
+        "operationId": "RenderConfigController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRenderConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Render config updated."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Render config not found or access denied."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Update metadata, instructions, or parameters.",
+        "tags": [
+          "Render Configs"
+        ]
+      },
+      "delete": {
+        "operationId": "RenderConfigController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Render config deleted."
+          },
+          "401": {
+            "description": "Unauthorized. Session is required."
+          },
+          "404": {
+            "description": "Render config not found or access denied."
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          },
+          {
+            "cookie": []
+          }
+        ],
+        "summary": "Delete a render config.",
+        "tags": [
+          "Render Configs"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Plan Vision API",
+    "description": "REST API for Plan Vision backend (users, auth, providers).",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "cookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "auth_session",
+        "description": "Better Auth session cookie"
+      },
+      "access-token": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http",
+        "description": "Optional Better Auth access token"
+      }
+    },
+    "schemas": {
+      "SignInDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user@example.com",
+            "description": "User email address"
+          },
+          "password": {
+            "type": "string",
+            "example": "password123",
+            "description": "User password"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      },
+      "SignUpDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "John Doe",
+            "description": "User full name"
+          },
+          "email": {
+            "type": "string",
+            "example": "user@example.com",
+            "description": "User email address"
+          },
+          "password": {
+            "type": "string",
+            "example": "password123",
+            "description": "User password"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "password"
+        ]
+      },
+      "CreateImageTypeDto": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "User-facing label (e.g., \"2D Floor Plan\").",
+            "maxLength": 255
+          },
+          "value": {
+            "type": "string",
+            "description": "Internal value key (e.g., \"floor_plan_2d\").",
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description shown in the UI."
+          }
+        },
+        "required": [
+          "label",
+          "value"
+        ]
+      },
+      "UpdateImageTypeDto": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "User-facing label (e.g., \"2D Floor Plan\").",
+            "maxLength": 255
+          },
+          "value": {
+            "type": "string",
+            "description": "Internal value key (e.g., \"floor_plan_2d\").",
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description shown in the UI."
+          }
+        }
+      },
+      "CreateStyleDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "User-facing name (e.g., \"Modern\").",
+            "maxLength": 255
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "description": "Thumbnail URL displayed in the UI."
+          },
+          "promptFragment": {
+            "type": "string",
+            "description": "Prompt fragment sent to the AI when this style is chosen."
+          }
+        },
+        "required": [
+          "name",
+          "thumbnailUrl",
+          "promptFragment"
+        ]
+      },
+      "UpdateStyleDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "User-facing name (e.g., \"Modern\").",
+            "maxLength": 255
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "description": "Thumbnail URL displayed in the UI."
+          },
+          "promptFragment": {
+            "type": "string",
+            "description": "Prompt fragment sent to the AI when this style is chosen."
+          }
+        }
+      },
+      "CreateProjectDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Project name chosen by the user.",
+            "maxLength": 255,
+            "example": "Downtown Loft Floor Plan"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "UpdateProjectDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Project name chosen by the user.",
+            "maxLength": 255,
+            "example": "Downtown Loft Floor Plan"
+          }
+        }
+      },
+      "CreateInputImageDto": {
+        "type": "object",
+        "properties": {
+          "imageUrl": {
+            "type": "string",
+            "description": "Cloud storage URL pointing to the uploaded file.",
+            "example": "https://storage.googleapis.com/plan-vision/uploads/123.png"
+          },
+          "filename": {
+            "type": "string",
+            "description": "Original filename as provided by the user.",
+            "example": "floor-plan.png"
+          }
+        },
+        "required": [
+          "imageUrl",
+          "filename"
+        ]
+      },
+      "CreateRenderConfigDto": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "number",
+            "description": "Project ID this job belongs to."
+          },
+          "inputImageId": {
+            "type": "number",
+            "description": "Input image ID for the render."
+          },
+          "imageTypeId": {
+            "type": "number",
+            "description": "Image type ID describing the source."
+          },
+          "styleId": {
+            "type": "number",
+            "description": "Optional style ID chosen by the user."
+          },
+          "customInstructions": {
+            "type": "string",
+            "description": "Additional custom instructions."
+          },
+          "colorPrimaryHex": {
+            "type": "string",
+            "description": "Primary hex color, e.g., \"#3B82F6\"."
+          },
+          "colorSecondaryHex": {
+            "type": "string",
+            "description": "Secondary hex color."
+          },
+          "colorNeutralHex": {
+            "type": "string",
+            "description": "Neutral hex color."
+          },
+          "perspectiveAngle": {
+            "type": "number",
+            "description": "Perspective angle in degrees."
+          },
+          "perspectiveX": {
+            "type": "number",
+            "description": "Perspective X coordinate."
+          },
+          "perspectiveY": {
+            "type": "number",
+            "description": "Perspective Y coordinate."
+          }
+        },
+        "required": [
+          "projectId",
+          "inputImageId",
+          "imageTypeId"
+        ]
+      },
+      "UpdateRenderConfigDto": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "number",
+            "description": "Project ID this job belongs to."
+          },
+          "inputImageId": {
+            "type": "number",
+            "description": "Input image ID for the render."
+          },
+          "imageTypeId": {
+            "type": "number",
+            "description": "Image type ID describing the source."
+          },
+          "styleId": {
+            "type": "number",
+            "description": "Optional style ID chosen by the user."
+          },
+          "customInstructions": {
+            "type": "string",
+            "description": "Additional custom instructions."
+          },
+          "colorPrimaryHex": {
+            "type": "string",
+            "description": "Primary hex color, e.g., \"#3B82F6\"."
+          },
+          "colorSecondaryHex": {
+            "type": "string",
+            "description": "Secondary hex color."
+          },
+          "colorNeutralHex": {
+            "type": "string",
+            "description": "Neutral hex color."
+          },
+          "perspectiveAngle": {
+            "type": "number",
+            "description": "Perspective angle in degrees."
+          },
+          "perspectiveX": {
+            "type": "number",
+            "description": "Perspective X coordinate."
+          },
+          "perspectiveY": {
+            "type": "number",
+            "description": "Perspective Y coordinate."
+          }
+        }
+      }
+    }
+  }
+}

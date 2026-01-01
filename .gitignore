@@ -1,0 +1,27 @@
+# =============================================================================
+# PlanVision Monorepo - Root .gitignore
+# =============================================================================
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/
+
+# Environment files (handled by component .gitignore, but double-safe)
+.env
+.env.local
+.env.*.local

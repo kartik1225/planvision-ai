@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		53BFB6C72ECDAA2D00421B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53BFB6AE2ECDAA2C00421B71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53BFB6B52ECDAA2C00421B71;
+			remoteInfo = plan_vision;
+		};
+		53BFB6D12ECDAA2D00421B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53BFB6AE2ECDAA2C00421B71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53BFB6B52ECDAA2C00421B71;
+			remoteInfo = plan_vision;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		53BFB6B62ECDAA2C00421B71 /* plan_vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plan_vision.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BFB6C62ECDAA2D00421B71 /* plan_visionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = plan_visionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BFB6D02ECDAA2D00421B71 /* plan_visionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = plan_visionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		53BFB6B82ECDAA2C00421B71 /* plan_vision */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = plan_vision;
+			sourceTree = "<group>";
+		};
+		53BFB6C92ECDAA2D00421B71 /* plan_visionTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = plan_visionTests;
+			sourceTree = "<group>";
+		};
+		53BFB6D32ECDAA2D00421B71 /* plan_visionUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = plan_visionUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53BFB6B32ECDAA2C00421B71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFB6C32ECDAA2D00421B71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFB6CD2ECDAA2D00421B71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53BFB6AD2ECDAA2C00421B71 = {
+			isa = PBXGroup;
+			children = (
+				53BFB6B82ECDAA2C00421B71 /* plan_vision */,
+				53BFB6C92ECDAA2D00421B71 /* plan_visionTests */,
+				53BFB6D32ECDAA2D00421B71 /* plan_visionUITests */,
+				53BFB6B72ECDAA2C00421B71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53BFB6B72ECDAA2C00421B71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53BFB6B62ECDAA2C00421B71 /* plan_vision.app */,
+				53BFB6C62ECDAA2D00421B71 /* plan_visionTests.xctest */,
+				53BFB6D02ECDAA2D00421B71 /* plan_visionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53BFB6B52ECDAA2C00421B71 /* plan_vision */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BFB6DA2ECDAA2D00421B71 /* Build configuration list for PBXNativeTarget "plan_vision" */;
+			buildPhases = (
+				53BFB6B22ECDAA2C00421B71 /* Sources */,
+				53BFB6B32ECDAA2C00421B71 /* Frameworks */,
+				53BFB6B42ECDAA2C00421B71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				53BFB6B82ECDAA2C00421B71 /* plan_vision */,
+			);
+			name = plan_vision;
+			packageProductDependencies = (
+			);
+			productName = plan_vision;
+			productReference = 53BFB6B62ECDAA2C00421B71 /* plan_vision.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53BFB6C52ECDAA2D00421B71 /* plan_visionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BFB6DD2ECDAA2D00421B71 /* Build configuration list for PBXNativeTarget "plan_visionTests" */;
+			buildPhases = (
+				53BFB6C22ECDAA2D00421B71 /* Sources */,
+				53BFB6C32ECDAA2D00421B71 /* Frameworks */,
+				53BFB6C42ECDAA2D00421B71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53BFB6C82ECDAA2D00421B71 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				53BFB6C92ECDAA2D00421B71 /* plan_visionTests */,
+			);
+			name = plan_visionTests;
+			packageProductDependencies = (
+			);
+			productName = plan_visionTests;
+			productReference = 53BFB6C62ECDAA2D00421B71 /* plan_visionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53BFB6CF2ECDAA2D00421B71 /* plan_visionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BFB6E02ECDAA2D00421B71 /* Build configuration list for PBXNativeTarget "plan_visionUITests" */;
+			buildPhases = (
+				53BFB6CC2ECDAA2D00421B71 /* Sources */,
+				53BFB6CD2ECDAA2D00421B71 /* Frameworks */,
+				53BFB6CE2ECDAA2D00421B71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53BFB6D22ECDAA2D00421B71 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				53BFB6D32ECDAA2D00421B71 /* plan_visionUITests */,
+			);
+			name = plan_visionUITests;
+			packageProductDependencies = (
+			);
+			productName = plan_visionUITests;
+			productReference = 53BFB6D02ECDAA2D00421B71 /* plan_visionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53BFB6AE2ECDAA2C00421B71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2610;
+				TargetAttributes = {
+					53BFB6B52ECDAA2C00421B71 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					53BFB6C52ECDAA2D00421B71 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 53BFB6B52ECDAA2C00421B71;
+					};
+					53BFB6CF2ECDAA2D00421B71 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 53BFB6B52ECDAA2C00421B71;
+					};
+				};
+			};
+			buildConfigurationList = 53BFB6B12ECDAA2C00421B71 /* Build configuration list for PBXProject "plan_vision" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53BFB6AD2ECDAA2C00421B71;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 53BFB6B72ECDAA2C00421B71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53BFB6B52ECDAA2C00421B71 /* plan_vision */,
+				53BFB6C52ECDAA2D00421B71 /* plan_visionTests */,
+				53BFB6CF2ECDAA2D00421B71 /* plan_visionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53BFB6B42ECDAA2C00421B71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFB6C42ECDAA2D00421B71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFB6CE2ECDAA2D00421B71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53BFB6B22ECDAA2C00421B71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFB6C22ECDAA2D00421B71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFB6CC2ECDAA2D00421B71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53BFB6C82ECDAA2D00421B71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53BFB6B52ECDAA2C00421B71 /* plan_vision */;
+			targetProxy = 53BFB6C72ECDAA2D00421B71 /* PBXContainerItemProxy */;
+		};
+		53BFB6D22ECDAA2D00421B71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53BFB6B52ECDAA2C00421B71 /* plan_vision */;
+			targetProxy = 53BFB6D12ECDAA2D00421B71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		53BFB6D82ECDAA2D00421B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = A79C53SNR7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53BFB6D92ECDAA2D00421B71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = A79C53SNR7;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53BFB6DB2ECDAA2D00421B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = plan_vision/plan_vision.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"plan_vision/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos for your design projects.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Save your generated designs to Photos.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.remux.plan-vision";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53BFB6DC2ECDAA2D00421B71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = plan_vision/plan_vision.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"plan_vision/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos for your design projects.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Save your generated designs to Photos.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.remux.plan-vision";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53BFB6DE2ECDAA2D00421B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.remux.plan-visionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/plan_vision.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/plan_vision";
+			};
+			name = Debug;
+		};
+		53BFB6DF2ECDAA2D00421B71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.remux.plan-visionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/plan_vision.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/plan_vision";
+			};
+			name = Release;
+		};
+		53BFB6E12ECDAA2D00421B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.remux.plan-visionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = plan_vision;
+			};
+			name = Debug;
+		};
+		53BFB6E22ECDAA2D00421B71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.remux.plan-visionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = plan_vision;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53BFB6B12ECDAA2C00421B71 /* Build configuration list for PBXProject "plan_vision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BFB6D82ECDAA2D00421B71 /* Debug */,
+				53BFB6D92ECDAA2D00421B71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BFB6DA2ECDAA2D00421B71 /* Build configuration list for PBXNativeTarget "plan_vision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BFB6DB2ECDAA2D00421B71 /* Debug */,
+				53BFB6DC2ECDAA2D00421B71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BFB6DD2ECDAA2D00421B71 /* Build configuration list for PBXNativeTarget "plan_visionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BFB6DE2ECDAA2D00421B71 /* Debug */,
+				53BFB6DF2ECDAA2D00421B71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BFB6E02ECDAA2D00421B71 /* Build configuration list for PBXNativeTarget "plan_visionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BFB6E12ECDAA2D00421B71 /* Debug */,
+				53BFB6E22ECDAA2D00421B71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53BFB6AE2ECDAA2C00421B71 /* Project object */;
+}
