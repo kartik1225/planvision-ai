@@ -4,32 +4,15 @@ AI-powered architectural design and visualization platform. Upload floor plans o
 
 ## Demo
 
-<table>
-<tr>
-<td width="33%" align="center">
-<strong>Onboarding & Styles</strong><br/>
-<a href="https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/onboarding.mp4">
-<img src="https://img.shields.io/badge/▶_Watch-Onboarding-blue?style=for-the-badge" alt="Watch Onboarding"/>
-</a>
-</td>
-<td width="33%" align="center">
-<strong>Floor Plan → 3D</strong><br/>
-<a href="https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/floor_plan_render.mp4">
-<img src="https://img.shields.io/badge/▶_Watch-Floor_Plan-green?style=for-the-badge" alt="Watch Floor Plan"/>
-</a>
-</td>
-<td width="33%" align="center">
-<strong>Exterior Workflow</strong><br/>
-<a href="https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/exterior_workflow.mp4">
-<img src="https://img.shields.io/badge/▶_Watch-Exterior-orange?style=for-the-badge" alt="Watch Exterior"/>
-</a>
-</td>
-</tr>
-</table>
+### Onboarding & Style Selection
 
 https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/onboarding.mp4
 
+### Floor Plan to 3D Render
+
 https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/floor_plan_render.mp4
+
+### Exterior Design Workflow
 
 https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/exterior_workflow.mp4
 
@@ -45,11 +28,7 @@ Manage styles, templates, and AI configurations through the admin panel.
 <img src="docs/admin/screenshot-4.jpg" width="45%" alt="AI Helper"/>
 </p>
 
-<p align="center">
-<a href="https://github.com/kartik1225/planvision-ai/raw/main/docs/admin/admin-demo.mp4">
-<img src="https://img.shields.io/badge/▶_Watch-Admin_Demo-purple?style=for-the-badge" alt="Watch Admin Demo"/>
-</a>
-</p>
+### Admin Demo
 
 https://github.com/kartik1225/planvision-ai/raw/main/docs/admin/admin-demo.mp4
 
