@@ -18,8 +18,10 @@ ehthumbs.db
 *.swo
 *~
 
-# Claude Code
+# AI Tools
 .claude/
+CLAUDE.md
+AGENTS.md
 
 # Environment files (handled by component .gitignore, but double-safe)
 .env
