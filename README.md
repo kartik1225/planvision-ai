@@ -38,11 +38,10 @@ https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/exterior_workfl
 Manage styles, templates, and AI configurations through the admin panel.
 
 <p align="center">
-<img src="docs/admin/screenshot-1.jpg" width="45%" alt="Admin Dashboard"/>
 <img src="docs/admin/screenshot-2.jpg" width="45%" alt="Style Management"/>
+<img src="docs/admin/screenshot-3.jpg" width="45%" alt="Template Management"/>
 </p>
 <p align="center">
-<img src="docs/admin/screenshot-3.jpg" width="45%" alt="Template Management"/>
 <img src="docs/admin/screenshot-4.jpg" width="45%" alt="AI Helper"/>
 </p>
 
