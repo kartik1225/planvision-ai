@@ -2,6 +2,37 @@
 
 AI-powered architectural design and visualization platform. Upload floor plans or interior photos and see them rendered in different artistic styles using Google's Gemini AI.
 
+## Demo
+
+<table>
+<tr>
+<td width="33%" align="center">
+<strong>Onboarding & Styles</strong><br/>
+<a href="https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/onboarding.mp4">
+<img src="https://img.shields.io/badge/▶_Watch-Onboarding-blue?style=for-the-badge" alt="Watch Onboarding"/>
+</a>
+</td>
+<td width="33%" align="center">
+<strong>Floor Plan → 3D</strong><br/>
+<a href="https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/floor_plan_render.mp4">
+<img src="https://img.shields.io/badge/▶_Watch-Floor_Plan-green?style=for-the-badge" alt="Watch Floor Plan"/>
+</a>
+</td>
+<td width="33%" align="center">
+<strong>Exterior Workflow</strong><br/>
+<a href="https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/exterior_workflow.mp4">
+<img src="https://img.shields.io/badge/▶_Watch-Exterior-orange?style=for-the-badge" alt="Watch Exterior"/>
+</a>
+</td>
+</tr>
+</table>
+
+https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/onboarding.mp4
+
+https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/floor_plan_render.mp4
+
+https://github.com/kartik1225/planvision-ai/raw/main/docs/videos/exterior_workflow.mp4
+
 ## Features
 
 - Upload floor plans or interior photos
