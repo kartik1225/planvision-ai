@@ -1,5 +1,9 @@
 # PlanVision
 
+<p align="center">
+<img src="docs/hero.jpg" alt="PlanVision - Floor Plan to 3D Render" width="300"/>
+</p>
+
 AI-powered architectural design and visualization platform. Upload floor plans or interior photos and see them rendered in different artistic styles using Google's Gemini AI.
 
 ## Demo
